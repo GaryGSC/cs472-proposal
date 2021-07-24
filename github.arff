@@ -1,0 +1,42 @@
+@RELATION GitHub Community Health
+
+@ATTRIBUTE owner string
+@ATTRIBUTE repo string
+@ATTRIBUTE description string
+@ATTRIBUTE fork {"y","n"}
+@ATTRIBUTE seconds_since_created number
+@ATTRIBUTE seconds_since_updated number
+@ATTRIBUTE seconds_since_pushed number
+@ATTRIBUTE size number
+
+@DATA
+"dotnet","sdk","Core functionality needed to create .NET Core projects, that is shared between Visual Studio and CLI","n",157921589,1,4,85775
+"zodiacon","RegExp",?,"n",1371935,2,5,1352
+"nonebot","plugin-test","Test frontend for nonebot v2+","n",32017101,2,5,314
+"aler9","rtsp-simple-server","ready-to-use RTSP / RTMP / HLS server and proxy that allows to read, publish and proxy video and audio streams","n",49580628,2,5,1244
+"Blankly-Finance","Blankly","Backtest, paper trade, sandbox test, and deploy live cross-exchange without modifying a single line of trading logic (on stocks and crypto 💸).","n",11829549,2,5,1295
+"compiler-explorer","compiler-explorer","Run compilers interactively from your web browser and interact with the assembly","n",289407674,4,7,21719
+"apache","incubator-tuweni","Apache Tuweni is a set of libraries and other tools to aid development of blockchain and other decentralized software in Java and other JVM languages. It includes a low-level bytes library, serialization and deserialization codecs (e.g. RLP), various cryptography functions and primatives, and lots of other helpful utilities.","n",73258195,4,7,44796
+"eggheadio","egghead-next","The frontend for egghead.io.","n",32121657,5,5,132373
+"dask","dask-docker","Docker images for dask","n",130804382,7,10,151
+"Mercury-Language","mercury","The Mercury logic programming system.","n",269964938,8,10,132991
+"LOOHP","InteractiveChat","Add click and hover events to chat messages!","n",42544843,12,15,160800
+"JohnCoene","packer","webpack + npm + R = ❤️","n",31783616,14,17,3194
+"datadesk","california-coronavirus-scrapers","The open-source web scrapers that feed the Los Angeles Times' California coronavirus tracker.","n",13468019,16,19,865414
+"elfmz","far2l","Linux port of FAR v2","n",156282513,15,19,54690
+"diddipoeler","sportsmanagement","Die neue Sports Management Komponente für Joomla 3/4","n",261735606,22,25,82896
+"cgsecurity","testdisk","TestDisk & PhotoRec","n",192935668,20,25,7517
+"repobee","repobee","CLI tool for managing Git repositories on GitHub and GitLab in the context of education","n",98064331,25,28,2183
+"roosta","tmux-fuzzback","Search your tmux scrollback buffer using fzf","n",60333651,25,28,126
+"rudderbucky","shellcore","Shellcore Command Remastered","n",83685379,25,28,183840
+"wowchemy","wowchemy-hugo-modules","🔥 The website builder for Hugo. No code, build with widgets! 创建在线课程，学术简历或初创网站。","n",165435796,25,29,11504
+"gayanvoice","top-github-users","Check your ranking in GitHub! Get the list of most active GitHub users based on public, private contributions and number of followers by country. Don't forget to star ⭐ this repository.","n",4448638,25,29,90270
+"xndcn","smzdm.com",?,"n",256914541,26,29,776716
+"bndw","wifi-card","📶 Print a QR code for connecting to your WiFi (wificard.io)","n",36277072,27,30,773
+"GitMessengerBot","GitMessengerBot-Android","타입스크립트, V8 엔진의 자바스크립트, 파이썬 그리고 Git을 지원하는 최첨단 메신저 봇!","n",29122398,27,30,36463
+"szczepienia","szczepienia.github.io",?,"n",8888432,31,33,128675
+"goodhertz","coldtype","cross-platform display typography in python","n",67376856,38,40,19982
+"xpenatan","jDear-imgui","Small Java C++ Dear imgui binding","n",71422957,45,47,765
+"JosiahParry","genius","Easily access song lyrics from Genius in a tibble. ","n",131341070,49,53,429
+"stunicons","stunicons","Stunning icons for your next web project","n",9004635,51,54,269
+"mirage","mirage-crypto","Cryptographic primitives for MirageOS","n",46229043,51,23,6087
