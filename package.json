@@ -1,0 +1,20 @@
+{
+  "name": "cs472-proposal",
+  "description": "GitHub Community Health",
+  "author": "Gary Crye",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaryGSC/cs472-proposal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GaryGSC/cs472-proposal/issues"
+  },
+  "homepage": "https://github.com/GaryGSC/cs472-proposal#readme"
+}
