@@ -5,6 +5,8 @@ const consoleLogLevel = require('console-log-level')
 const moment = require('moment')
 const arff = require('arff')
 const { promises: fs } = require('fs')
+const fetch = require('node-fetch')
+const cheerio = require('cheerio')
 
 const OctokitWithPlugins = Octokit
   .plugin(throttling) // Gives us hooks for handling errors related to throttling
@@ -78,27 +80,19 @@ async function getListOfRepos (desiredCount, pageSize = (desiredCount < 100) ? d
   )
 }
 
-async function getContributors (listOfRepos) {
-  for (const repo of listOfRepos) {
+async function getContributorCounts (listOfRepos) {
+  // Mimic https://github.com/storybookjs/frontpage/pull/18
+  await Promise.all(listOfRepos.map(async repo => {
+    const res = await fetch(`https://www.github.com/${repo.owner}/${repo.repo}`)
+    const body = await res.text()
+    const $ = cheerio.load(body)
     try {
-      repo.contributors = await octokit.paginate(
-        octokit.rest.repos.listContributors,
-        {
-          owner: repo.owner,
-          repo: repo.repo,
-          per_page: 100
-          // anon: true // Include anonymous contributors, which we would've done if CocoaPods/Specs didn't cause our data collection to crawl to a halt
-        },
-        response => response.data.map(contributor => ({
-          name: contributor.login,
-          contributions: contributor.contributions
-        }))
-      )
+      repo.contributor_count = +$(`a[href="/${repo.owner}/${repo.repo}/graphs/contributors"] > span`).html().trim()
     } catch {
-      // "The history or contributor list is too large to list contributors for this repository via the API."
-      repo.contributors = null
+      // If there's only 1 contributor, contributors aren't featured on the sidebar
+      repo.contributor_count = 1
     }
-  }
+  }))
 }
 
 async function getReadmeLengths (listOfRepos) {
@@ -235,18 +229,6 @@ async function writeToArffFile (listOfRepos, filename) {
   const listOfReposInArffFormat = arff.format({
     relation: 'GitHub Community Health',
     attributes: {
-      owner: {
-        name: 'owner',
-        type: 'string'
-      },
-      repo: {
-        name: 'repo',
-        type: 'string'
-      },
-      description: {
-        name: 'description',
-        type: 'string'
-      },
       fork: {
         name: 'fork',
         type: 'enum',
@@ -379,15 +361,12 @@ async function writeToArffFile (listOfRepos, filename) {
         name: 'milestones_count',
         type: 'number'
       },
-      contributors_count: { // Putting this last for convenience, since we'll be using it as the label
-        name: 'contributors_count',
+      contributor_count: { // Putting this last for convenience, since we'll be using it as the label
+        name: 'contributor_count',
         type: 'number'
       }
     },
     data: listOfRepos.map(repo => ({
-      owner: repo.owner,
-      repo: repo.repo,
-      description: repo.description,
       fork: coerceBooleanToYN(repo.fork),
       seconds_since_created: getSecondsSince(repo.created_at),
       seconds_since_updated: getSecondsSince(repo.updated_at),
@@ -418,7 +397,7 @@ async function writeToArffFile (listOfRepos, filename) {
       has_releases: coerceBooleanToYN(repo.has_releases),
       labels_count: repo.labels?.length,
       milestones_count: repo.milestones?.length,
-      contributors_count: repo.contributors?.length
+      contributor_count: repo.contributor_count
     }))
   })
   await fs.writeFile(filename, listOfReposInArffFormat)
@@ -427,9 +406,8 @@ async function writeToArffFile (listOfRepos, filename) {
 (async function main () {
   try {
     const start = Date.now()
-    let listOfRepos = await getListOfRepos(300)
-    await getContributors(listOfRepos)
-    listOfRepos = listOfRepos.filter(repo => repo.contributors !== null) // Some repos has so many contributors, the API won't give us details on them
+    let listOfRepos = await getListOfRepos(10)
+    await getContributorCounts(listOfRepos)
     // We're doing these in sequence to try to play nicely with rate limits
     await getWorkflows(listOfRepos)
     await getReadmeLengths(listOfRepos)
