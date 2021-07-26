@@ -8,35 +8,330 @@
 @ATTRIBUTE seconds_since_updated number
 @ATTRIBUTE seconds_since_pushed number
 @ATTRIBUTE size number
+@ATTRIBUTE stargazers_count number
+@ATTRIBUTE watchers_count number
+@ATTRIBUTE primary_language string
+@ATTRIBUTE has_issues {"y","n"}
+@ATTRIBUTE has_projects {"y","n"}
+@ATTRIBUTE has_downloads {"y","n"}
+@ATTRIBUTE has_wiki {"y","n"}
+@ATTRIBUTE has_pages {"y","n"}
+@ATTRIBUTE forks_count number
+@ATTRIBUTE open_issues_count number
+@ATTRIBUTE license string
+@ATTRIBUTE topics_count number
+@ATTRIBUTE workflows_count number
+@ATTRIBUTE readme_size number
+@ATTRIBUTE has_code_of_conduct {"y","n"}
+@ATTRIBUTE has_contributing {"y","n"}
+@ATTRIBUTE has_issue_template {"y","n"}
+@ATTRIBUTE has_pull_request_template {"y","n"}
+@ATTRIBUTE languages_count number
+@ATTRIBUTE primary_language_ratio number
+@ATTRIBUTE has_deployments {"y","n"}
+@ATTRIBUTE environments_count number
+@ATTRIBUTE has_releases {"y","n"}
+@ATTRIBUTE labels_count number
+@ATTRIBUTE milestones_count number
+@ATTRIBUTE contributors_count number
 
 @DATA
-"dotnet","sdk","Core functionality needed to create .NET Core projects, that is shared between Visual Studio and CLI","n",157921589,1,4,85775
-"zodiacon","RegExp",?,"n",1371935,2,5,1352
-"nonebot","plugin-test","Test frontend for nonebot v2+","n",32017101,2,5,314
-"aler9","rtsp-simple-server","ready-to-use RTSP / RTMP / HLS server and proxy that allows to read, publish and proxy video and audio streams","n",49580628,2,5,1244
-"Blankly-Finance","Blankly","Backtest, paper trade, sandbox test, and deploy live cross-exchange without modifying a single line of trading logic (on stocks and crypto 💸).","n",11829549,2,5,1295
-"compiler-explorer","compiler-explorer","Run compilers interactively from your web browser and interact with the assembly","n",289407674,4,7,21719
-"apache","incubator-tuweni","Apache Tuweni is a set of libraries and other tools to aid development of blockchain and other decentralized software in Java and other JVM languages. It includes a low-level bytes library, serialization and deserialization codecs (e.g. RLP), various cryptography functions and primatives, and lots of other helpful utilities.","n",73258195,4,7,44796
-"eggheadio","egghead-next","The frontend for egghead.io.","n",32121657,5,5,132373
-"dask","dask-docker","Docker images for dask","n",130804382,7,10,151
-"Mercury-Language","mercury","The Mercury logic programming system.","n",269964938,8,10,132991
-"LOOHP","InteractiveChat","Add click and hover events to chat messages!","n",42544843,12,15,160800
-"JohnCoene","packer","webpack + npm + R = ❤️","n",31783616,14,17,3194
-"datadesk","california-coronavirus-scrapers","The open-source web scrapers that feed the Los Angeles Times' California coronavirus tracker.","n",13468019,16,19,865414
-"elfmz","far2l","Linux port of FAR v2","n",156282513,15,19,54690
-"diddipoeler","sportsmanagement","Die neue Sports Management Komponente für Joomla 3/4","n",261735606,22,25,82896
-"cgsecurity","testdisk","TestDisk & PhotoRec","n",192935668,20,25,7517
-"repobee","repobee","CLI tool for managing Git repositories on GitHub and GitLab in the context of education","n",98064331,25,28,2183
-"roosta","tmux-fuzzback","Search your tmux scrollback buffer using fzf","n",60333651,25,28,126
-"rudderbucky","shellcore","Shellcore Command Remastered","n",83685379,25,28,183840
-"wowchemy","wowchemy-hugo-modules","🔥 The website builder for Hugo. No code, build with widgets! 创建在线课程，学术简历或初创网站。","n",165435796,25,29,11504
-"gayanvoice","top-github-users","Check your ranking in GitHub! Get the list of most active GitHub users based on public, private contributions and number of followers by country. Don't forget to star ⭐ this repository.","n",4448638,25,29,90270
-"xndcn","smzdm.com",?,"n",256914541,26,29,776716
-"bndw","wifi-card","📶 Print a QR code for connecting to your WiFi (wificard.io)","n",36277072,27,30,773
-"GitMessengerBot","GitMessengerBot-Android","타입스크립트, V8 엔진의 자바스크립트, 파이썬 그리고 Git을 지원하는 최첨단 메신저 봇!","n",29122398,27,30,36463
-"szczepienia","szczepienia.github.io",?,"n",8888432,31,33,128675
-"goodhertz","coldtype","cross-platform display typography in python","n",67376856,38,40,19982
-"xpenatan","jDear-imgui","Small Java C++ Dear imgui binding","n",71422957,45,47,765
-"JosiahParry","genius","Easily access song lyrics from Genius in a tibble. ","n",131341070,49,53,429
-"stunicons","stunicons","Stunning icons for your next web project","n",9004635,51,54,269
-"mirage","mirage-crypto","Cryptographic primitives for MirageOS","n",46229043,51,23,6087
+"Protuhj","nhc-cones","Adds all forecast cones to the NHC 5 day forecast imagery","n",27321620,4,7,1100392,13,13,"Python","y","n","y","n","y",1,0,"MIT",0,1,1013,"n","n","n","n",1,1,"y",1,"n",9,0,1
+"fastify","fastify-passport","Use passport strategies for authentication within a fastify application ","n",76000803,6,9,3156,92,92,"TypeScript","y","n","y","y","n",12,6,"MIT",0,1,19132,"y","y","y","y",2,0.9755961994252994,"n",0,"y",12,0,13
+"jo-sm","stylelint_d","Long running Stylelint daemon","n",157573527,8,10,1851,14,14,"TypeScript","y","y","y","y","n",5,1,"MIT",0,3,3463,"n","n","n","n",3,0.9911159928281833,"n",1,"y",8,0,5
+"foxnne","pixi","Pixel art editor made with Zig.","n",3324251,11,13,487,11,11,"Zig","y","y","y","y","n",1,0,?,0,0,2030,"n","n","n","n",1,1,"n",0,"n",9,0,2
+"ferdikoomen","openapi-typescript-codegen","NodeJS library that generates Typescript or Javascript clients based on the OpenAPI specification","n",54330347,13,15,4654,385,385,"TypeScript","y","y","y","n","n",102,72,"MIT",7,0,15833,"y","y","n","n",3,0.782464423486557,"n",0,"n",9,1,11
+"f-droid","fdroiddata","Data for the main F-Droid repository.","n",221138593,12,15,314854,121,121,"Python","n","n","y","n","n",38,0,"AGPL-3.0",3,0,1955,"n","y","n","n",2,0.8058028860914952,"n",0,"n",7,0,336
+"cms-sw","cms-sw.github.io","Documentation for CMSSW","n",225391367,13,17,79021,12,12,"JavaScript","y","y","y","y","y",45,4,?,0,0,1161,"n","n","n","y",4,0.6352577064633915,"y",1,"n",32,0,25
+"FlagBrew","PKSM","GenIV to GenVIII save manager.","n",163975263,16,19,40132,1082,1082,"C++","y","y","y","y","n",166,25,"GPL-3.0",0,1,7463,"n","n","n","n",6,0.7872557714393578,"y",1,"y",11,0,52
+"revoxhere","duco-statistics","📃 Duino-Coin (DUCO) network statistics & explorer website","n",57751146,21,24,1730648,19,19,"HTML","n","n","y","n","y",5,0,?,5,0,635,"n","n","n","n",2,0.8743978109222647,"y",1,"n",9,0,4
+"LiteLDev","LiteLoaderBDS","A lightweight plugin loader for Bedorck Dedicated Server","n",15513574,27,30,14855,90,90,"C++","y","n","y","n","n",11,1,"GPL-3.0",6,1,3683,"n","n","n","n",2,0.626044145717534,"n",0,"y",10,0,9
+"Jason2866","Tasmota-specials","Tasmota unofficial firmware builds","n",37752057,27,30,791036,16,16,"C","y","y","y","y","n",1,0,"GPL-3.0",1,7,1407,"y","y","n","y",20,0.6516124195597343,"y",1,"n",9,0,216
+"rcore-os","trapframe-rs","Handle TrapFrame across kernel and user space on multiple ISAs.","n",52342871,31,34,2490,14,14,"Rust","y","y","y","y","y",10,0,"MIT",5,2,1850,"n","n","n","n",3,0.6763825276343686,"y",1,"n",9,0,6
+"sony","nnabla-examples","Neural Network Libraries https://nnabla.org/ - Examples","n",117351430,32,35,189899,165,165,"Python","y","y","y","y","n",44,5,"Apache-2.0",0,0,12795,"n","n","n","n",8,0.6380556257502394,"n",0,"y",14,0,39
+"walkccc","LeetCode","💡 LeetCode in C++/Java/Python (respect coding conventions)","n",76339287,34,37,4434,129,129,"C++","n","y","y","y","y",46,1,?,5,1,2721,"n","n","n","n",3,0.41757886568212615,"y",1,"n",8,0,1
+"tomjoht","learnapidoc","Repo for API doc book","n",136689741,37,40,457644,65,65,"HTML","y","y","y","y","y",33,13,?,0,0,254,"n","n","n","n",7,0.8990507724019496,"y",1,"n",10,0,9
+"AdguardTeam","FiltersRegistry","Known filters subscriptions transformed for better compatibility with AdGuard","n",109705307,41,45,3512007,61,61,"JavaScript","y","y","y","y","n",22,19,"LGPL-3.0",4,1,7836,"n","n","n","n",2,0.720218878248974,"y",1,"n",9,0,25
+"feravolt","FDE.AI-docs","Various FDE.AI related texts","n",35684810,43,45,481,19,19,"Shell","n","y","y","y","n",3,0,?,0,0,924,"n","n","n","n",1,1,"n",0,"y",9,0,1
+"xndcn","smzdm.com",?,"n",257046260,45,47,777890,20,20,?,"y","y","y","y","n",8,2,?,0,0,20,"n","n","n","n",0,null,"n",0,"n",6,0,1
+"Azure","azure-docs-sdk-java","☕️ Azure SDK for Java API documentation repository. Content here is mostly auto-generated.","n",158420932,38,48,860752,24,24,?,"y","y","y","y","n",146,83,"NOASSERTION",0,0,861,"y","n","n","n",0,null,"n",0,"n",33,0,147
+"hu-qi","trending-in-one","今日头条热搜,知乎热门视频，知乎热搜榜，知乎热门话题，微博热搜榜；记录从 2020-11-29 日开始的热搜。每小时抓取一次数据，按天归档。","n",20685512,53,56,38918,46,46,"TypeScript","y","y","y","y","n",15,6,"MIT",6,2,70242,"n","n","n","n",2,0.9948640960809102,"n",0,"n",9,0,1
+"halbux","sparselizard","C++ FEM library | user-friendly | multi-physics | hp-adaptive","n",72452445,55,58,10873,171,171,"C++","y","y","y","y","n",39,1,"NOASSERTION",6,0,884,"n","n","n","n",5,0.9936034619635435,"n",0,"y",8,0,4
+"omid","awesome-persian-youtubers","لیست یوتیوبرهای فارسی‌زبان","n",34341377,57,59,18126,31,31,"Rust","y","n","y","n","n",7,1,"MIT",8,1,94767,"n","n","n","n",2,0.9613188151983553,"n",0,"n",11,0,6
+"shivammathur","homebrew-extensions",":beers: Homebrew tap for PHP extensions","n",34911010,58,61,1430,74,74,"Ruby","y","y","y","y","n",6,0,"MIT",19,9,8668,"y","y","n","y",3,0.9621977092160193,"n",0,"n",185,0,3
+"easysoft","zentaopms","Zentao is an agile(scrum) project management system/tool, Free Upgrade Forever!​","n",330888889,60,64,95782,756,756,"PHP","y","y","y","y","n",230,3,"NOASSERTION",6,0,3994,"n","n","n","n",8,0.8943037638208323,"n",0,"y",0,0,35
+"CGRU","cgru","CGRU - AFANASY","n",296591393,60,64,43173,207,207,"C++","y","y","y","y","n",90,21,"LGPL-3.0",8,0,3080,"n","n","n","n",17,0.49620285481737464,"n",0,"y",8,1,38
+"Harrix","static-site-webpack-habr","Демонстрация сборки статического сайта с помощью Webpack","n",106507014,63,66,11768,174,174,"JavaScript","y","y","y","y","n",70,2,"MIT",0,0,1658,"n","n","n","n",3,0.6620338197822562,"n",0,"y",9,0,2
+"GNOME","gnome-photos","Read-only mirror of https://gitlab.gnome.org/GNOME/gnome-photos","n",288665960,64,67,15132,19,19,"C","n","y","y","n","n",25,0,"GPL-3.0",0,0,1284,"n","n","n","n",5,0.9855209218300338,"n",0,"n",6,0,198
+"intlify","vue-cli-plugin-i18n",":globe_with_meridians: Vue CLI plugin to add vue-i18n to your Vue Project","n",107268586,74,1,6759,177,177,"JavaScript","y","y","y","y","n",30,45,"MIT",6,2,5173,"n","y","n","n",4,0.6993555065373572,"n",0,"y",38,0,13
+"runetech","osrs-gamepacks","Collections of untouched OldSchool RuneScape gamepacks","n",53604981,74,77,369886,14,14,?,"n","n","y","n","n",10,0,?,15,1,545,"n","n","n","n",0,null,"n",0,"n",9,0,1
+"bannedbook","fanqiang","翻墙-科学上网","n",206080405,74,78,707426,21745,21745,"Kotlin","y","y","y","y","y",4992,255,?,11,0,5210,"n","n","n","n",9,0.46140700978844335,"y",1,"y",7,0,2
+"stopcoronatn","stopcoronatn.github.io","Mirror of COVID bed availability in Tamil Nadu.","n",8549005,77,80,1777,12,12,"Python","y","y","y","y","y",5,5,"Unlicense",0,1,2130,"n","n","n","n",1,1,"y",1,"n",9,0,3
+"MechanicalRabbit","HypertextLiteral.jl","Julia library for the string interpolation of HTML and SVG","n",24754737,79,82,1354,21,21,"Julia","y","y","y","y","y",2,0,"ISC",5,5,4867,"n","n","n","n",1,1,"y",1,"y",9,0,4
+"stevenliuyi","covid19","an interactive, animated COVID-19 coronavirus map to track the outbreak over time by country and by region for selected countries","n",45352562,83,86,6668897,313,313,"JavaScript","y","y","y","y","n",101,39,"MIT",7,9,7181,"n","n","n","n",5,0.8545223663269107,"n",0,"n",10,0,9
+"braydoncoyer","braydoncoyer","My GitHub Profile README! Learn how to build it yourself by scrolling to the bottom of the README and following the link!","n",17409346,84,86,1275,14,14,"JavaScript","y","y","y","y","n",49,0,?,0,1,8910,"n","n","n","n",1,1,"n",0,"n",9,0,1
+"second-state","wasm-learning","Building Rust functions for Node.js to take advantage of Rust's performance, WebAssembly's security and portability, and JavaScript's ease-of-use. Demo code and recipes.","n",47020632,88,90,455309,153,153,"Rust","y","y","y","y","y",40,7,?,14,2,1820,"n","n","n","n",7,0.7963594073077122,"y",1,"n",9,0,8
+"BerkeleyTrue","dotfiles","dot files and vim plugins I use on a daily.","n",232252759,95,98,6333,13,13,"Clojure","y","y","y","y","n",1,0,?,0,0,176,"n","n","n","n",10,0.4220826490457485,"n",0,"n",6,0,2
+"kiang","pharmacies","藥局口罩採購地圖","n",46460683,98,101,18815085,170,170,"PHP","y","y","y","y","y",23,3,"MIT",0,0,2191,"n","n","n","n",3,0.7164811579048745,"y",1,"n",9,0,6
+"GitTools","actions","GitHub Action that installs and uses the GitVersion and GitReleaseManager tools","n",54118266,99,102,27780,70,70,"TypeScript","y","y","y","y","n",32,12,"MIT",0,2,1375,"n","n","n","n",2,0.9576927414201406,"n",0,"y",12,1,21
+"yunity","karrot-backend","Django API server for the karrot frontend","n",184232679,100,103,8554,97,97,"Python","y","n","y","n","n",79,6,"AGPL-3.0",0,0,3828,"n","n","n","n",6,0.9868137378141015,"n",0,"y",9,0,35
+"apache","struts-examples","Mirror of Apache Struts","n",232754864,108,109,3567,377,377,"Java","n","y","y","n","n",514,0,?,3,0,1039,"y","n","n","n",5,0.6071554714315471,"n",0,"n",7,0,15
+"lau1944","shark","A Flutter server rendering framework","n",1459148,107,110,129,12,12,"Dart","y","y","y","y","n",0,0,"NOASSERTION",0,1,1697,"n","n","n","n",4,0.9252033617983596,"n",0,"n",9,0,1
+"char0n","http-request-in-editor","Reference implementation of HTTP Request in Editor Specification https://github.com/JetBrains/http-request-in-editor-spec","n",46091775,113,7,989,26,26,"JavaScript","y","y","y","n","n",0,6,"BSD-3-Clause",0,2,4987,"y","y","n","y",3,0.9329057381743214,"n",0,"y",11,0,3
+"AshleyYakeley","Truth","Changes and Pinafore projects. Pull requests not accepted.","n",117549788,113,116,5933,16,16,"Haskell","y","y","y","y","n",0,50,"GPL-2.0",0,0,465,"n","n","n","n",7,0.9919818638640625,"n",0,"y",12,3,1
+"daenuprobst","covid19-cases-switzerland","Data from BAG Tweets made useful.","n",43261077,115,118,13349453,286,286,"Python","y","y","y","y","n",74,65,?,0,0,5131,"n","n","n","n",1,1,"n",0,"n",9,0,1
+"NixOS","nixos-homepage","Sources for nixos.org","n",242837553,116,119,21943,112,112,"Less","y","y","y","y","n",196,70,?,0,3,3484,"n","n","n","n",8,0.3789238319249644,"y",2,"n",13,1,118
+"puppetlabs","puppet","Server automation framework and application","n",342783666,117,124,83686,6239,6239,"Ruby","n","n","y","n","n",2199,22,"Apache-2.0",0,2,3397,"y","y","n","n",7,0.995027373540699,"n",0,"n",12,0,293
+"yunity","karrot-frontend","Karrot is a free and open-source tool for grassroots initiatives and groups of people that want to coordinate face-to-face activities on a local, autonomous and voluntary basis.","n",158155233,125,128,59862,275,275,"JavaScript","y","y","y","n","n",168,42,"MIT",5,1,10544,"y","n","n","y",7,0.47828768615994083,"n",0,"n",19,4,63
+"renovatebot","docker-renovate","Renovate docker slim image","n",40056216,129,129,2265,14,14,"Dockerfile","y","n","y","n","n",5,6,"AGPL-3.0",2,2,1579,"n","n","n","n",3,0.7017421602787457,"n",0,"n",9,0,6
+"dsfsi","covid19za","Coronavirus COVID-19 (2019-nCoV) Data Repository and Dashboard for South Africa","n",43177530,127,130,76550,224,224,"Jupyter Notebook","y","y","y","y","n",192,33,"MIT",13,4,15616,"y","n","n","n",6,0.998170498133582,"n",0,"n",11,2,63
+"arvidn","libtorrent","an efficient feature complete C++ bittorrent implementation","n",193967147,131,132,102147,3302,3302,"C++","y","y","y","y","n",730,91,"NOASSERTION",3,16,3062,"n","y","y","n",6,0.9442471897428671,"n",0,"y",12,2,101
+"btrplace","scheduler","BtrPlace is a virtual machine scheduler. You can specialized it safely through independent constraints to make it support what match your expectations.","n",265488810,133,128,92278,49,49,"Java","y","y","y","y","n",12,24,"LGPL-3.0",0,1,3604,"n","y","n","n",7,0.985044477977233,"n",0,"y",9,1,8
+"aimakerspace","PeekingDuck","Modular computer vision inference framework.","n",9671252,135,138,14696,20,20,"Python","y","y","y","y","n",8,39,"Apache-2.0",0,6,7922,"y","y","n","n",2,0.9898013344601906,"y",1,"y",16,0,10
+"microsoft","vscode","Visual Studio Code","n",185964252,130,141,390704,119143,119143,"TypeScript","y","y","y","y","n",19514,5946,"MIT",5,27,6268,"y","y","n","y",41,0.9391359654997193,"n",0,"y",348,7,364
+"t-tran","slack-chat-backup","Backup your Slack chat messages (direct messages, group messages, joined channels) to your local computer without any extra permissions or apps.","n",40577487,144,147,1449,18,18,"Shell","y","y","y","y","n",1,1,?,0,0,1577,"n","n","n","n",1,1,"n",0,"n",9,0,1
+"unchase","awesome-russian-it",":book: :headphones: :tv: :calendar: Список полезных русскоязычных ресурсов, связанных с ИТ - https://awesomeit.ru","n",47500435,144,147,65912,422,422,"HTML","y","y","y","y","n",33,0,"CC-BY-4.0",14,2,419348,"n","y","n","n",1,1,"y",1,"n",9,0,7
+"githubocto","flat-demo-bitcoin-price","A Flat Data GitHub Action demo repo","n",8148081,149,151,5281,58,58,"JavaScript","y","y","y","y","n",24,0,"MIT",2,1,12521,"n","n","n","n",1,1,"n",0,"n",9,0,9
+"rusefi","rusefi","rusefi - GPL internal combustion engine control unit","n",229072610,149,153,883550,314,314,"C","y","y","y","y","n",134,479,?,9,17,8161,"n","n","y","n",17,0.7053712227281883,"n",0,"y",37,0,29
+"InfuseAI","primehub","A toil-free multi-tenancy machine learning platform in your Kubernetes cluster","n",73065575,151,154,3727,207,207,"Python","y","n","y","y","n",13,2,"Apache-2.0",12,2,3055,"n","y","n","y",13,0.26472332186464387,"n",0,"y",14,1,17
+"reustle","covid19japan-data",?,"n",42312774,156,159,1021365,45,45,"JavaScript","y","y","y","y","y",15,10,"NOASSERTION",0,1,2438,"n","n","n","n",4,0.8628733668805688,"y",1,"n",10,0,6
+"webdao","v2ray","V2ray看新闻，自动抓取可用节点，以V2ray的机制上网看新闻","n",28390630,162,165,230998,20,20,?,"y","y","y","y","n",79,2,?,7,0,306,"n","n","n","n",0,null,"n",0,"n",9,0,1
+"coreboot","coreboot","Mirror of https://review.coreboot.org/coreboot.git. We don't handle Pull Requests.","n",232318564,163,167,203861,1316,1316,"C","n","n","y","n","n",369,1,"GPL-2.0",0,0,3305,"n","n","n","n",23,0.9470814466382087,"n",0,"n",6,0,268
+"harbor-school","lighthouse","Lighthouse is a continuous design system for integrating design with development workflows.","n",22278457,164,167,42407,18,18,"TypeScript","y","y","y","y","n",1,0,"MIT",4,1,1407,"y","y","n","n",4,0.9874142903226589,"n",0,"n",10,0,1
+"Weasley-J","lejing-mall","乐璟商城","n",15682853,168,171,181186,21,21,"HTML","y","y","y","y","n",12,0,"MIT",0,0,19221,"n","n","n","n",12,0.46977962492344694,"n",0,"n",9,0,1
+"taizihuang","wmyblog","王孟源的博客镜像【可搜索】，每小时更新","n",21531380,169,172,107195,37,37,"HTML","y","y","y","y","y",11,0,?,0,1,2070,"n","n","n","n",5,0.9974956098947749,"y",1,"n",9,0,1
+"ricokahler","next-data-hooks","Use `getStaticProps`/`getServerSideProps` as react-hooks","n",29728592,177,106,1360,245,245,"TypeScript","y","y","y","n","n",5,3,"MIT",2,1,9727,"n","n","n","n",2,0.7246393739414823,"n",0,"y",10,1,3
+"w3c","permissions","Permissions API","n",214405541,176,117,1304,71,71,"HTML","y","y","y","y","y",43,45,"NOASSERTION",0,1,199,"y","y","n","y",2,0.9963423275053142,"y",1,"n",20,2,27
+"helaili","enterprise-showcase",?,"n",17752200,178,180,3268,22,22,"Vue","y","y","y","n","y",8,13,"MIT",0,3,3351,"n","n","n","n",3,0.6719017355169885,"y",1,"n",12,0,2
+"myTerminal","theme-looper","A convenience package to switch themes in Emacs","n",231787812,187,189,869,16,16,"Emacs Lisp","y","y","y","y","n",4,3,"GPL-3.0",2,0,4454,"n","n","n","n",1,1,"n",0,"y",7,0,2
+"DragonFlyBSD","DeltaPorts","FreeBSD Ports Collection + DeltaPorts = DragonFly Ports (a.k.a. DPorts)","n",275764530,186,191,288165,27,27,"C","y","y","y","y","n",24,8,?,0,0,2842,"n","n","n","n",34,0.4670404014975668,"n",0,"n",8,0,16
+"MapTextLang","MapTextLang","地图翻译组","n",161284479,189,192,59270,17,17,"Squirrel","y","y","y","y","n",164,6,?,0,0,4613,"n","n","n","n",2,0.9987094210721662,"n",0,"y",11,0,69
+"goccy","go-yaml","YAML support for the Go language","n",56669378,194,119,611,493,493,"Go","y","y","y","y","n",50,21,"MIT",5,0,8548,"n","n","n","n",1,1,"n",0,"y",9,0,23
+"coronasafe","life","Verified Crowd-Sourced Emergency Services Directory","n",8340498,195,197,810183,79,79,"JavaScript","y","y","y","y","y",56,23,?,7,1,4840,"y","y","n","n",3,0.8502219217721929,"y",3,"n",22,0,34
+"aws-samples","aws-step-functions-plagiarism-demo-dotnetcore","A simple workflow for developing AWS Step Functions to demonstrate how you can combine AWS Step Functions with AWS Lambda using DotNetCore 3.1, and the Serverless Application Model (SAM), and expose your workflow via an API Gateway!","n",95768353,195,199,5357,54,54,"JavaScript","y","y","y","n","n",20,6,"NOASSERTION",7,0,5191,"y","y","n","y",6,0.7556623171973788,"n",0,"y",9,0,4
+"MysteryPancake","Fun","Small fun scripts","n",132519632,199,201,699,16,16,"AutoHotkey","y","y","y","y","y",8,0,"MIT",20,0,50,"n","n","n","n",13,0.6738142681756119,"y",1,"n",7,0,1
+"ctti-clinicaltrials","aact","Improving Public Access to Aggregate Content of ClinicalTrials.gov","n",156008701,208,210,47268,67,67,"Ruby","y","y","y","y","n",24,21,"MIT",0,0,15713,"n","n","n","n",5,0.8108853563221452,"y",2,"y",8,0,11
+"whyt-byte","Blue-Topaz_Obsidian-css","A blue theme for Obsidian. ","n",25747032,209,212,6441,94,94,"CSS","y","y","y","y","n",18,1,"MIT",0,0,6876,"n","n","n","n",1,1,"n",0,"y",10,0,3
+"mohamedmansour","ethereum-burn-stats","Website that showcases EIP-1559 Burn","n",3586447,213,216,2991,43,43,"TypeScript","y","n","y","n","n",11,4,"MIT",2,0,2897,"n","n","n","n",6,0.8506027122049221,"n",0,"n",9,0,2
+"xv44586","toolkit4nlp",?,"n",33760717,217,220,579,77,77,"Python","y","y","y","y","n",11,4,"Apache-2.0",3,0,7863,"n","n","n","n",1,1,"n",0,"y",9,0,1
+"cdnjs","cdnjs","🤖 CDN assets - The #1 free and open source CDN built to make life easier for developers.","n",328662843,212,221,20037251,9134,9134,?,"y","n","y","n","n",4456,9,"MIT",17,2,3984,"n","y","n","y",0,null,"n",0,"n",32,0,382
+"jdalrymple","gitbeaker","🤖 GitLab API NodeJS library with full support of all the Gitlab API services.","n",129214579,223,30,15819,858,858,"TypeScript","y","n","y","n","n",212,29,"NOASSERTION",8,1,38063,"y","y","n","n",3,0.9890873302478944,"n",0,"y",26,1,96
+"Belphemur","node-json-db","A simple \"database\" that use JSON file for Node.JS.","n",222124825,223,219,8182,348,348,"TypeScript","y","y","y","y","y",44,8,"MIT",5,2,11740,"n","n","n","n",2,0.9942769565048695,"y",1,"y",11,0,19
+"Kiny-Kiny","Kiny-Painel","Um pequeno painel de consulta grátis. ","n",15767176,228,231,38186,129,129,"Python","y","y","y","y","n",39,2,"Apache-2.0",0,1,4724,"n","n","n","n",2,0.9950989722116482,"n",0,"y",9,0,4
+"team-eoanb","EoaNB","End of a New Beginning is a Hearts of Iron IV mod that aims to create a new and unique geopolitical sandbox for modern history. ","n",74883338,234,237,540718,89,89,"Lua","y","y","y","y","n",93,9,?,0,0,7844,"n","n","n","n",3,0.853638985530002,"y",1,"y",10,0,73
+"shuhm-gh","stockopr","股票操盘手","n",136148351,237,240,56706,13,13,"Python","y","y","y","y","n",9,2,?,0,0,2130,"n","n","n","n",2,0.9905819416479135,"n",0,"n",8,0,2
+"getlantern","lantern-binaries","Lantern installers binary downloads.","n",221917842,237,240,16633235,2775,2775,"Shell","n","y","y","y","n",771,113,"Apache-2.0",0,0,2510,"n","n","n","y",1,1,"n",0,"n",7,0,5
+"mgao6767","frds","Financial research data services for academics.","n",35942919,239,160,17423,22,22,"Python","y","n","y","n","y",7,0,"MIT",5,2,4725,"n","n","n","n",3,0.9776983615521315,"y",1,"y",9,0,1
+"webaverse","app","Webaverse virtual world web app client","n",28061587,240,243,407009,22,22,"JavaScript","y","y","y","y","y",11,654,?,10,1,1813,"n","n","n","n",3,0.9411651776768531,"y",1,"n",27,0,12
+"yantar92","org","Speed-up org-mode","n",113170258,241,244,101802,47,47,"Emacs Lisp","y","y","y","y","n",4,2,"GPL-3.0",0,0,14526,"n","n","n","n",5,0.9946399000898647,"n",0,"n",10,0,322
+"mponce0","covid19.analytics","R package to obtain and analyze live data from the nCOVID19 coronavirus","n",43425543,244,247,554802,28,28,"R","y","y","y","y","y",5,3,"GPL-2.0",5,3,68868,"n","n","n","n",1,1,"y",1,"y",11,0,2
+"anticensority","generated-pac-scripts","Here we store PAC-scripts generated by servers","n",143971382,248,250,1900,13,13,"JavaScript","y","y","y","n","y",2,0,?,3,0,659,"n","n","n","n",1,1,"y",1,"n",7,0,1
+"blakeembrey","node-htmlmetaparser","A `htmlparser2` handler for parsing rich metadata from HTML. Includes HTML metadata, JSON-LD, RDFa, microdata, OEmbed, Twitter cards and AppLinks.","n",150109522,249,252,7426,40,40,"HTML","y","y","y","y","n",9,2,"NOASSERTION",10,0,6835,"n","n","n","n",2,0.998000225914219,"n",0,"y",9,0,7
+"xiadd","tg-wb-trending","Github actions自动抓取微博热搜，每3小时自动存档，通过github page生成网站和api","n",18307943,256,259,15936,14,14,"JavaScript","y","y","y","y","n",12,0,"MIT",1,2,1010,"n","n","n","n",1,1,"y",2,"n",10,0,3
+"mpiktas","covid19lt",?,"n",42583781,261,264,2677730,18,18,"HTML","y","y","y","y","y",2,0,?,0,0,5103,"n","n","n","n",5,0.9777108162771658,"y",1,"n",9,0,2
+"openstack","openstack","Repository tracking all OpenStack repositories as submodules. Mirror of code maintained at opendev.org.","n",244639782,259,264,126427,4020,4020,"Python","n","n","n","n","n",1500,1,"Apache-2.0",0,0,1554,"n","n","n","n",1,1,"n",0,"n",6,0,357
+"ganta","marktone","Change a Rich Text input area to Markdown input area on kintone","n",66273078,262,199,3841,12,12,"TypeScript","y","n","y","n","n",3,12,"MIT",1,1,364,"n","n","n","n",3,0.853034230047368,"n",0,"y",11,0,8
+"openstack","requirements","Global requirements for OpenStack. Mirror of code maintained at opendev.org.","n",282985435,265,268,9079,118,118,"Python","n","n","n","n","n",216,0,?,0,0,791,"n","n","n","n",2,0.9111289067448468,"n",0,"n",7,0,332
+"owid","covid-19-data","Data on COVID-19 (coronavirus) cases, deaths, hospitalizations, tests • All countries • Updated daily by Our World in Data","n",43506464,259,268,23838455,4023,4023,"Python","y","n","y","n","n",2484,20,?,4,1,959,"n","n","n","n",5,0.6636117129110322,"n",0,"n",16,0,49
+"RandomCoderOrg","ubuntu-on-android","Run Ubuntu 21.04 with pre-installed XFCE4 in android/termux with ease! Everything is preinstalled so just download install and done🚀🚀","n",5330937,266,230,14238,30,30,"Shell","y","y","y","y","n",8,3,"MIT",15,1,7580,"y","n","n","n",1,1,"n",1,"y",12,0,4
+"taniarascia","sokoban","Sokoban.js 📦","n",349316,242,270,19,35,35,"JavaScript","y","y","y","y","y",4,0,?,0,0,246,"n","n","n","n",3,0.8874245472837022,"y",1,"n",9,0,3
+"imodeljs","imodeljs","Monorepo for iTwin.js Library","n",87863780,269,271,273714,359,359,"TypeScript","y","n","n","n","n",139,34,"MIT",12,4,5318,"n","y","n","n",12,0.9747186626822104,"n",0,"n",11,0,126
+"taniarascia","sokoban","Sokoban.js 📦","n",349316,242,270,19,35,35,"JavaScript","y","y","y","y","y",4,0,?,0,0,246,"n","n","n","n",3,0.8874245472837022,"y",1,"n",9,0,3
+"imodeljs","imodeljs","Monorepo for iTwin.js Library","n",87863780,269,271,273714,359,359,"TypeScript","y","n","n","n","n",139,34,"MIT",12,4,5318,"n","y","n","n",12,0.9747186626822104,"n",0,"n",11,0,126
+"hookzof","socks5_list","Auto-updated SOCKS5 proxy list + proxies for Telegram","n",62139412,272,274,432532,113,113,?,"n","n","y","n","n",49,2,?,11,0,284,"n","n","n","n",0,null,"n",0,"n",9,0,1
+"alphapapa","ement.el","Matrix client for Emacs (WIP)","n",20670799,272,116,1150,41,41,"Emacs Lisp","y","y","y","y","n",3,1,"GPL-3.0",0,1,8069,"n","n","n","n",3,0.7415245614749094,"n",0,"n",9,0,1
+"Maillol","aiohttp-pydantic","Aiohttp View that validates request body and query sting regarding the annotations declared in the View method","n",25468550,273,236,108,25,25,"Python","y","y","y","y","n",8,3,"MIT",0,0,10201,"n","n","n","n",3,0.9492131967253297,"n",0,"n",9,0,3
+"gfx-rs","wgpu","Safe and portable GPU abstraction in Rust, implementing WebGPU API.","n",90409740,277,276,20193,2232,2232,"Rust","y","y","y","y","n",207,233,"NOASSERTION",4,4,4255,"n","n","n","y",3,0.9986337454903857,"n",0,"n",15,1,165
+"mitchelloharawild","distributional","Vectorised distributions for R","n",57387644,275,37,2370,36,36,"R","y","y","y","y","y",5,17,"GPL-3.0",0,4,5350,"y","y","y","n",1,1,"y",1,"y",9,2,5
+"s-cart","s-cart","Free Laravel open source e-commerce for business: shopping cart, cms content, and more...","n",41518377,277,244,42258,337,337,"PHP","y","y","y","y","y",232,23,"MIT",10,0,6492,"n","n","n","n",5,0.4336044682731938,"y",1,"y",11,1,3
+"nextstrain","nextstrain.org","The Nextstrain website","n",101370021,279,248,36372,70,70,"JavaScript","y","y","y","y","n",38,58,"NOASSERTION",0,2,11646,"y","y","n","y",3,0.9581900795388548,"y",268,"n",19,0,30
+"NickCao","flakes","the deterministic (mirror of https://gitlab.com/NickCao/flakes)","n",17934274,277,280,576,11,11,"Nix","n","n","y","n","n",0,0,"MIT",1,1,0,"n","n","n","n",2,0.9908276063955839,"n",0,"n",9,0,1
+"mlr-org","mlr3gallery","Case studies using mlr3","n",46886425,276,280,545419,16,16,"HTML","y","n","y","n","y",7,10,?,6,2,3065,"n","n","n","n",6,0.631990727325413,"y",1,"n",20,0,14
+"kisslinux","kiss","KISS Linux - Package Manager","n",66838828,282,285,3255,341,341,"Shell","y","n","y","n","n",51,2,"MIT",3,2,389,"n","n","y","n",1,1,"n",0,"y",10,0,18
+"HelmerLuzo","PlutoTV_HL",?,"n",23510810,286,288,81113,12,12,"HTML","y","y","y","n","y",2,0,?,0,0,0,"n","n","n","n",2,0.9133143085090061,"y",1,"n",9,0,1
+"EddieHubCommunity","hacktoberfest-practice","Repo for you to raise a Pull Request for practice","n",87760735,289,293,489,68,68,?,"y","y","y","y","n",278,3,"MIT",0,4,17799,"y","y","n","n",0,null,"n",0,"y",10,0,270
+"Bartozzz","queue-promise","A simple, dependency-free library for concurrent promise-based queues. Comes with with concurrency and timeout control.","n",163579686,291,294,5965,39,39,"JavaScript","y","y","y","n","n",4,0,"MIT",6,4,8521,"n","n","n","n",2,0.939450238567749,"n",0,"y",12,0,6
+"ockam-network","ockam","Tools for mutual authentication and end-to-end encrypted messaging between distributed applications.","n",83671849,292,295,52865,953,953,"Rust","y","n","y","n","n",103,267,"Apache-2.0",20,106,5954,"y","y","n","y",3,0.7059556948283628,"n",0,"y",36,0,44
+"Patrowl","PatrowlHearsData","Open-Source Vulnerability Intelligence Center - Unified source of vulnerability, exploit and threat Intelligence feeds","n",19239112,294,294,385272,29,29,?,"y","y","y","y","n",14,1,"Apache-2.0",7,0,2911,"n","n","n","n",0,null,"n",0,"n",10,0,1
+"rozierguillaume","covid-19","How does COVID-19 spread around the world? Charts, data, dashboards and interpretations...","n",42997370,291,296,84301087,279,279,"HTML","y","y","y","y","n",37,20,"MIT",0,0,3565,"n","n","n","n",4,0.9952552046313715,"n",0,"n",9,0,3
+"alura-challenges","challenge-back-end","Aqui está a lista com todos os projetos que VOCÊS estão construindo nesse challenge de Back End! ⚗️","n",1765915,301,304,60,11,11,?,"y","y","y","y","n",3,0,?,1,1,23335,"n","n","n","n",0,null,"n",0,"n",9,0,1
+"gfw-breaker","banned-news3","禁闻聚合","n",50699064,301,305,987948,74,74,"Python","y","y","y","y","n",30,4,?,3,0,3675,"n","n","n","n",4,0.7769401559353539,"n",0,"n",9,0,1
+"libopenstorage","stork","Stork - Storage Orchestration Runtime for Kubernetes","n",122604419,302,305,31215,269,269,"Go","y","y","y","y","n",65,47,"Apache-2.0",0,0,10629,"y","y","y","y",4,0.9879545748208979,"n",0,"y",19,19,24
+"andrewtrotman","JASSv2","Experimental search engine in C/C++17 - still in early development.","n",146902062,303,306,9134,20,20,"C++","y","y","y","y","n",6,0,?,3,1,1569,"n","n","n","n",9,0.6213022263515001,"n",0,"n",7,0,5
+"erezrokah","aws-testing-library","Chai (https://chaijs.com) and Jest (https://jestjs.io/) assertions for testing services built with aws","n",89044482,304,202,3267,68,68,"TypeScript","y","y","y","y","n",5,7,"MIT",16,1,1448,"y","y","n","y",2,0.9784833937972566,"n",0,"y",10,0,5
+"OpenXRay","xray-16","Improved version of the X-Ray Engine, the game engine used in the world-famous S.T.A.L.K.E.R. game series by GSC Game World.","n",217384767,314,317,132715,1643,1643,"C++","y","y","y","y","y",330,136,"NOASSERTION",20,1,7803,"n","y","n","n",15,0.7562027500011527,"y",1,"y",45,4,81
+"microsoft","vscode-maven","VSCode extension \"Maven for Java\"","n",111707831,325,325,17989,116,116,"TypeScript","y","y","y","y","n",66,55,"NOASSERTION",4,0,8985,"y","n","n","n",3,0.8269610311331954,"n",0,"y",24,2,24
+"openrr","urdf-viz","visualize URDF/XACRO file, URDF Viewer works on Windows/MacOS/Linux","n",124466206,324,327,21330,171,171,"Rust","y","n","y","n","n",29,7,"Apache-2.0",9,2,6624,"n","n","n","n",1,1,"n",0,"y",7,0,5
+"pickle-finance","contracts","Deployed contracts","n",27647164,326,329,756,100,100,?,"y","y","y","y","n",34,2,?,0,0,28867,"n","n","n","n",0,null,"n",0,"n",9,0,9
+"hhvm","homebrew-hhvm","Official Mac OS X Homebrew formula for HHVM","n",186662048,334,337,3491,80,80,"Ruby","y","y","y","n","n",19,9,"MIT",2,0,1529,"y","y","y","n",2,0.9898956741344599,"n",0,"n",9,0,16
+"npackd","npackd","Package manager for Microsoft Windows: Wiki, bug tracker, mirror of the default repositories","n",200829102,338,341,309417,116,116,"Go","y","n","n","y","y",16,4,"GPL-3.0",5,0,2140,"n","n","n","n",1,1,"y",1,"n",11,0,1
+"mongodb","mongo","The MongoDB Database","n",395239952,334,348,637339,20148,20148,"C++","n","y","y","y","n",4872,55,"NOASSERTION",4,0,2058,"n","y","n","n",14,0.7298401199158947,"n",0,"n",1,0,286
+"simonw","disaster-data","Data scraped by https://github.com/simonw/disaster-scrapers","n",122273329,347,350,177355,23,23,?,"y","y","y","y","n",9,1,?,4,0,279,"n","n","n","n",0,null,"n",0,"n",8,0,2
+"woylie","flop","Filtering, ordering and pagination for Ecto","n",55876390,350,154,479,22,22,"Elixir","y","y","y","n","n",2,4,"MIT",5,2,4143,"y","n","n","n",1,1,"y",0,"y",12,1,5
+"andrzejchm","RESTMock","HTTP Server for Android Instrumentation tests","n",166017964,350,354,335,742,742,"Java","y","y","y","n","n",59,3,"Apache-2.0",0,0,11743,"n","n","n","n",1,1,"n",0,"y",7,13,9
+"sapcc","helm-charts","Helm charts for SAP Converged Cloud managing openstack on kubernetes","n",149253200,357,284,18140,15,15,"Smarty","y","y","y","y","n",12,87,"Apache-2.0",3,0,3281,"n","n","n","n",7,0.8756227012235224,"n",0,"n",9,0,92
+"alura-challenges","aluraquiz-base","Projeto construido durante a Imersão React edição NextJS da Alura!","n",16011004,359,362,8326,1383,1383,"JavaScript","y","y","y","y","n",599,52,?,5,1,415010,"n","y","n","n",1,1,"y",2,"y",9,0,291
+"oldschoolgg","oldschoolbot","Old School Bot - A fanmade discord bot based on Old School RuneScape (OSRS)","n",103578539,359,363,28149,93,93,"TypeScript","y","n","y","y","n",83,580,"MIT",4,2,3195,"n","y","n","y",2,0.9997571713910812,"n",0,"n",23,0,36
+"InvestmentSystems","recombinator","Recombinator is a Python package for statistical resampling in Python. It provides various algorithms for the iid bootstrap, the block bootstrap, as well as optimal block-length selection.","n",65859191,366,369,1221,19,19,"Jupyter Notebook","y","y","y","y","n",5,0,"NOASSERTION",0,0,12707,"n","n","n","n",2,0.7362513256297603,"n",0,"n",9,0,2
+"amcharts","covid-charts","A collection of JavaScript-based data visualization tools and data for depicting spread of the COVID-19","n",42755661,367,370,1492756,93,93,"JavaScript","y","y","y","y","n",89,10,?,17,0,4318,"n","n","n","n",1,1,"n",0,"n",10,0,3
+"godotengine","godot","Godot Engine – Multi-platform 2D and 3D game engine","n",238424534,172,161,614075,40525,40525,"C++","y","y","y","n","n",7414,6523,"NOASSERTION",7,14,3763,"y","y","n","y",16,0.9021485583488065,"n",0,"y",55,4,459
+"sw-yx","gh-action-data-scraping","this shows how to use github actions to do periodic data scraping","n",47637745,368,371,5468,119,119,"JavaScript","y","y","y","y","n",17,3,"MIT",3,1,3165,"n","n","n","n",1,1,"n",0,"n",9,0,1
+"github","docs","The open-source repo for docs.github.com","n",67957811,122,374,475619,5441,5441,"JavaScript","y","y","y","n","n",21732,110,"NOASSERTION",3,80,3658,"y","y","n","y",7,0.7812453011939692,"y",4205,"n",71,0,451
+"justjavac","zhihu-trending-hot-questions","知乎热门话题，记录从 2020-11-24 日开始的知乎热门话题。每小时抓取一次数据，按天归档。","n",21078881,373,375,12066,44,44,"TypeScript","y","n","y","n","n",5,0,"MIT",0,2,14292,"n","n","n","n",1,1,"n",0,"n",9,0,1
+"hariimurti","NontonTV","Aplikasi android untuk menonton tv streaming. Cocok untuk android box/stb.","n",40940507,374,377,1012,14,14,"Kotlin","y","n","y","n","n",33,3,?,12,0,2077,"n","n","n","n",2,0.9827125207449751,"n",0,"y",9,0,7
+"mdexSwap","apyrobot","apyrobot","n",16188933,374,378,43153,16,16,"JavaScript","y","y","y","y","y",12,0,?,0,1,20,"n","n","n","n",1,1,"y",1,"n",9,0,1
+"wolfSSL","wolfssl","The wolfSSL library is a small, fast, portable implementation of TLS/SSL for embedded devices to the cloud.  wolfSSL supports up to TLS 1.3!","n",206619412,376,379,189045,1213,1213,"C","y","y","y","y","n",480,78,"GPL-2.0",20,3,17519,"n","n","n","n",16,0.8209354067377271,"n",0,"y",10,0,78
+"CriticalPathSecurity","Zeek-Intelligence-Feeds","Zeek-Formatted Threat Intelligence Feeds","n",29346858,378,380,3079,69,69,"Zeek","y","y","y","y","n",9,0,"MIT",0,0,1886,"n","n","n","n",1,1,"n",0,"n",9,0,1
+"apache","hive","Apache Hive","n",384403009,385,386,552906,3826,3826,"Java","n","n","y","n","y",3654,118,"Apache-2.0",7,2,4663,"y","n","n","y",25,0.8466721901637438,"y",1,"n",5,0,251
+"kiang","2019-nCoV",?,"n",47229891,384,387,3185001,15,15,"JavaScript","y","y","y","y","y",4,0,"MIT",0,0,0,"n","n","n","n",3,0.4238933924301627,"y",1,"n",10,0,2
+"blackcater","blackcater","Using Node.js to generate my Github profile readme automatically.","n",32930696,385,388,1485,37,37,"JavaScript","y","y","y","y","n",24,1,"MIT",5,1,4279,"n","n","n","n",1,1,"n",0,"y",10,0,4
+"Kromster80","knights_province","Knights Province missions and wiki.","n",184676629,385,388,5698,42,42,"Batchfile","y","n","y","y","n",7,66,?,8,0,462,"n","n","n","n",1,1,"n",0,"n",19,1,4
+"google","CFU-Playground","Want a faster ML processor? Do it yourself! -- A framework for playing with custom opcodes to accelerate TensorFlow Lite for Microcontrollers (TFLM).","n",11950172,387,391,5067,67,67,"C++","y","y","y","n","n",22,29,"Apache-2.0",3,3,5592,"y","y","n","n",9,0.5955571450821138,"n",0,"n",9,0,13
+"aesiniath","http-streams","Haskell HTTP client library for use with io-streams","n",271904877,390,393,698,48,48,"Haskell","y","y","y","n","n",44,17,"BSD-3-Clause",0,0,1549,"n","n","n","n",2,0.9991641673631939,"n",0,"n",6,2,25
+"erasta","CovidDataIsrael","Analyze Covid-19 data from ministery of health in Israel","n",26490031,394,397,33083,13,13,"JavaScript","y","y","y","y","y",9,16,"GPL-3.0",8,1,152,"n","n","n","n",3,0.8326370584650626,"y",1,"n",9,0,4
+"kishikawakatsumi","swift-playground","SwiftFiddle is an online playground for creating, sharing and embedding Swift fiddles (little Swift programs that run directly in your browser).","n",104696571,396,399,2320,66,66,"JavaScript","y","n","y","n","n",8,0,"MIT",0,1,1373,"n","n","n","n",4,0.6342175476586366,"n",0,"n",9,0,3
+"Tabll","gemnasium-db","GitLab 依赖项扫描的咨询数据库，每天13:00自动更新","n",24080128,400,403,9018,18,18,?,"y","y","y","y","n",2,0,"NOASSERTION",2,0,10443,"n","y","n","n",0,null,"n",0,"n",9,0,1
+"CVEProject","cvelist","Pilot program for CVE submission through GitHub","n",22930615,401,389,368498,221,221,?,"n","y","y","y","n",524,4,?,0,0,2134,"n","y","n","n",0,null,"n",0,"n",11,0,180
+"5t3ph","htmlrecipes","A collection of quick copy HTML snippets for a variety of common scenarios.","n",129474,404,407,241,26,26,"Nunjucks","y","n","y","n","n",1,0,?,5,0,244,"n","y","n","n",3,0.5765753424657534,"n",0,"n",9,0,2
+"metersphere","metersphere","MeterSphere 是一站式开源持续测试平台，涵盖测试跟踪、接口测试、性能测试、团队协作等功能，全面兼容 JMeter、Postman、Swagger 等开源、主流标准。","n",46580498,402,407,96309,4991,4991,"Java","y","y","y","y","n",1145,348,"GPL-2.0",12,2,6140,"n","n","n","n",6,0.5749447993270612,"n",0,"y",14,3,36
+"terrylao","PascalContainer","pascal data structure, B-Tree,B+Tree,B*Tree,T-Tree,HashMap","n",49572012,405,407,161,15,15,"Pascal","y","y","y","y","n",11,0,?,0,0,1925,"n","n","n","n",1,1,"n",0,"n",9,0,1
+"bradharding","doomretro","The classic, refined DOOM source port. For Windows PC.","n",239616029,407,410,116863,395,395,"C","y","n","y","y","n",55,69,"GPL-3.0",20,0,4170,"n","n","n","n",5,0.993559648924767,"y",1,"y",6,0,24
+"cockpit-project","cockpit-machines","Cockpit UI for virtual machines","n",11219628,413,415,864,13,13,"JavaScript","y","n","y","n","n",11,48,"LGPL-2.1",0,7,1572,"n","n","n","n",7,0.6567609050106371,"y",3,"y",17,0,10
+"thinca","config","My configuration files.","n",144087218,420,422,5947,27,27,"Roff","y","y","y","y","n",1,0,?,6,0,241,"n","n","n","n",16,0.9712797668185683,"n",0,"n",7,0,1
+"rexrainbow","phaser3-rex-notes","Notes of phaser3 engine","n",108843756,420,423,129595,727,727,"JavaScript","y","y","y","n","y",186,4,"MIT",1,0,2805,"n","n","n","n",5,0.8885708606210916,"y",1,"n",11,0,22
+"V4Fire","Client","V4Fire client core library ","n",127923849,425,428,32824,14,14,"TypeScript","y","y","y","y","n",10,59,"MIT",0,1,718,"y","n","n","n",6,0.5166498024736542,"n",0,"y",14,2,13
+"kawalcovid19","wargabantuwarga.com","Inisiatif warga untuk berbagi informasi seputar fasilitas kesehatan dan alat kesehatan untuk COVID-19.","n",1780669,426,429,3225,218,218,"TypeScript","y","y","y","n","n",47,76,"MIT",4,8,16644,"y","y","n","y",5,0.945409837806834,"y",0,"n",26,3,23
+"neatnik","omg.lol","Cool stuff for OMG.LOL","n",33702849,429,431,21,27,27,"CSS","y","y","y","n","n",1,13,?,0,0,100,"n","n","n","n",1,1,"n",0,"n",10,0,2
+"joeylane","hosts","My hosts file for blocking ad serving and malware domains (updated daily)","n",213768452,434,437,281,22,22,?,"y","y","y","y","n",3,4,?,0,0,0,"n","n","n","n",0,null,"n",0,"n",7,0,1
+"flyhigherpi","merlinclash_clash_related","clash binary update","n",32881017,435,437,218774,55,55,?,"y","y","y","y","n",23,5,?,0,0,0,"n","n","n","n",0,null,"n",0,"n",9,0,2
+"kubeflow","website","Kubeflow's public website","n",104281103,438,442,100814,101,101,"HTML","y","y","y","y","n",548,74,"CC-BY-4.0",0,1,12646,"n","n","n","n",7,0.6952744683009937,"n",0,"y",111,2,314
+"gluster","glusto-tests","Functional test framework for glusterfs.","n",152340097,438,442,3397,19,19,"Python","y","y","y","y","n",39,2,"GPL-3.0",0,0,9963,"n","y","y","n",4,0.9978528479840274,"n",0,"n",13,0,54
+"danjac","jcasts","Simple podcast MVP","n",19936371,444,448,17907,14,14,"Python","y","y","y","y","n",2,0,"MIT",12,1,3549,"n","n","n","n",6,0.6765096523672051,"n",0,"n",10,0,1
+"SecOps-Institute","Tor-IP-Addresses","Hourly checked and updated list of IP Addresses of Tor and Tor Exit Nodes","n",106348779,446,448,64293,68,68,?,"y","y","y","y","n",18,2,?,9,0,72,"n","n","n","n",0,null,"n",0,"n",8,0,1
+"greenbone","python-gvm","Greenbone Vulnerability Management Python Library","n",86129013,447,363,4094,65,65,"Python","y","n","y","y","n",44,4,"GPL-3.0",10,4,4707,"n","n","y","y",1,1,"n",0,"y",12,1,21
+"DimensionDev","Maskbook","The portal to the new, open Internet. ([I:b])","n",73173233,450,452,61435,827,827,"TypeScript","y","y","y","y","n",146,154,"AGPL-3.0",13,6,3415,"n","n","n","y",4,0.9938290960223691,"n",0,"y",87,2,35
+"fqnews","bnews","看禁闻","n",42588326,451,454,439016,39,39,"HTML","y","y","y","y","y",19,4,?,0,0,21010,"n","n","n","n",3,0.9905310661616569,"y",1,"n",9,0,1
+"openaustralia","planningalerts","Find out and have your say about what's being built and knocked down in your area.","n",367890703,454,457,17392,66,66,"Ruby","y","y","y","n","n",44,291,"GPL-2.0",1,0,22406,"n","n","n","n",7,0.9422113802962434,"n",0,"n",21,4,21
+"mgerb","top-of-reddit","Top Reddit posts every day.","n",139446776,454,457,106612,12,12,"Go","y","y","y","y","n",3,0,?,5,0,291075,"n","n","n","n",2,0.98676718261288,"n",0,"n",7,0,1
+"bhangun","generator-jhipster-flutter","JHipster module, generate mobile Apps (iOS/Android) using Flutter and JHipster as a backend.","n",85020195,455,446,2011,21,21,"Dart","y","y","y","y","n",5,2,"Apache-2.0",0,0,1881,"n","n","n","n",3,0.5501218088122801,"n",0,"n",9,2,2
+"civictechsweden","JagVillHaVaccin","A website to show available times in vaccination centers across Sweden","n",5618798,457,459,33351,15,15,"Python","y","y","y","n","n",4,14,"AGPL-3.0",5,2,4574,"n","n","n","n",2,0.9433203576164606,"y",1,"n",12,0,3
+"roosterkid","openproxylist","List of Free HTTPS, SOCKS4, SOCKS5 Proxy (Hourly Updates!)","n",9153163,459,460,176302,11,11,?,"y","y","y","y","n",8,0,?,4,0,255,"n","n","n","n",0,null,"n",0,"n",9,0,1
+"misakaio","chnroutes2","Better aggregated chnroutes","n",99775027,458,460,40078,189,189,?,"y","n","y","y","n",28,0,"CC-BY-SA-4.0",0,0,416,"n","n","n","n",0,null,"n",0,"n",8,0,2
+"Wadauk","scihub_ck","A tiny tool for checking the working domain of sci-hub","n",109961806,458,461,41641,103,103,"Perl","y","y","y","y","y",12,1,?,0,0,1739,"n","n","n","n",4,0.3489665302696464,"y",1,"n",8,0,1
+"gentoo","gentoo","[MIRROR] Official Gentoo ebuild repository","n",188043618,457,461,1197172,1458,1458,"Shell","n","y","y","n","n",1418,467,?,6,0,0,"n","n","n","n",31,0.9790189043496025,"n",0,"n",23,4,377
+"lannonbr","vscode-issue-tracker","A webapp to visualize the issue count of Microsoft/vscode","n",90646219,459,462,87951,207,207,"JavaScript","y","n","y","n","n",47,8,"MIT",0,0,1457,"n","n","n","n",3,0.7331705245275005,"n",0,"n",9,0,4
+"r0b0t3d","react-native-collapsible","Fully customizable collapsible views","n",3077684,467,469,2532,16,16,"TypeScript","y","y","y","y","n",0,0,"MIT",3,0,1355,"n","y","n","n",7,0.732603648424544,"n",0,"y",9,0,1
+"Esperanto","kurso-zagreba-metodo","Reta Esperanto-kurso laŭ la Zagreba Metodo","n",175585851,472,475,79447,101,101,"HTML","y","y","y","y","y",42,13,"CC-BY-4.0",9,0,2447,"n","n","n","n",5,0.5865994049928858,"y",1,"n",7,1,73
+"xunhuang","covid-19",?,"n",43495968,474,477,12652590,18,18,"JavaScript","y","y","y","y","y",18,25,"MIT",0,4,340,"n","n","n","n",5,0.9721334396563088,"y",1,"n",10,0,13
+"nikic","llvm-compile-time-data","LLVM compile-time performance data over time.","n",43101308,482,487,11372840,13,13,?,"y","n","y","n","n",2,0,"CC0-1.0",1,0,345,"n","n","n","n",0,null,"n",0,"n",9,0,2
+"seek-oss","braid-design-system","Themeable design system for the SEEK Group","n",88922440,493,495,286440,996,996,"TypeScript","y","n","y","n","y",56,2,"MIT",7,3,3969,"n","y","n","n",2,0.9909232286788294,"y",1,"y",10,0,21
+"Azure","Azure-Sentinel","Cloud-native SIEM for intelligent security analytics for your entire enterprise.","n",92716955,494,498,586967,1462,1462,"Jupyter Notebook","y","y","y","y","n",1001,112,"MIT",2,3,10583,"y","y","n","y",9,0.7699342546984521,"n",0,"n",30,0,269
+"mpv-player","mpv","🎥 Command line video player","n",277160346,337,506,94639,15527,15527,"C","y","y","y","y","n",1967,601,"NOASSERTION",8,2,8272,"n","n","n","y",8,0.8836076711063995,"n",0,"y",108,0,273
+"colatiger","v2ray-nodes","v2ray,shadowrocket节点","n",9422666,514,516,23406,90,90,?,"y","y","y","y","n",28,2,?,4,0,1690,"n","n","n","n",0,null,"n",0,"n",9,0,1
+"greenbone","gvm-tools","Remote control your Greenbone Vulnerability Manager (GVM)","n",121803188,516,427,3033,105,105,"Python","y","n","y","y","n",65,3,"GPL-3.0",16,4,6845,"n","n","y","y",1,1,"n",0,"y",12,1,24
+"ghoshnirmalya","writy","Generate beautiful HTML files without writing any code. Still in beta!","n",18550509,518,522,11621,15,15,"TypeScript","y","n","y","n","n",2,0,"MIT",6,0,4391,"n","n","n","n",2,0.9983071395833641,"y",2,"y",10,0,3
+"hotio","mergerfs","A docker image with mergerfs.","n",43163873,522,525,907,14,14,?,"y","n","y","n","n",1,0,"GPL-3.0",6,1,148,"n","n","n","n",0,null,"n",0,"n",10,0,2
+"Fokit","Quantumult-X",?,"n",8288230,527,530,347,18,18,"JavaScript","y","y","y","y","n",7,3,?,0,0,28,"n","n","n","n",1,1,"n",0,"n",9,0,2
+"hotio","cloudflareddns","Cloudflare DDNS docker image, with JSON log, Apprise, seperate API tokens and more.","n",61826104,534,538,1727,33,33,?,"y","n","y","n","n",1,0,"GPL-3.0",7,1,160,"n","n","n","n",0,null,"n",0,"n",10,0,3
+"OrangeWulf","Rust-Docs","Documentation of Rust Experimental","n",89840118,538,541,85062,24,24,?,"n","n","y","n","n",13,1,?,0,0,378,"n","n","n","n",0,null,"n",0,"n",8,0,1
+"qzhu2017","PyXtal","A code to generate atomic structure with symmetry","n",104367586,541,544,17348,94,94,"Python","y","y","y","y","y",34,6,"MIT",4,1,4560,"n","n","n","n",5,0.9825056531193956,"y",1,"y",9,0,11
+"hotio","plex","A docker container with Plex mediaserver.","n",52067909,557,560,1596,12,12,?,"y","n","y","n","n",2,0,"GPL-3.0",4,1,140,"n","n","n","n",0,null,"n",0,"n",10,0,2
+"hotio","plex","A docker container with Plex mediaserver.","n",52067909,557,560,1596,12,12,?,"y","n","y","n","n",2,0,"GPL-3.0",4,1,140,"n","n","n","n",0,null,"n",0,"n",10,0,2
+"cnpm","bug-versions","collect all bug versions on npm package.","n",113664850,557,523,207,36,36,"JavaScript","y","n","y","n","n",147,0,?,0,3,852,"n","n","n","n",1,1,"n",0,"y",10,0,52
+"hotio","tautulli","Tautulli docker image.","n",75377831,567,569,1686,12,12,?,"y","n","y","n","n",0,0,"GPL-3.0",4,1,148,"n","n","n","n",0,null,"n",0,"n",9,0,3
+"hotio","sabnzbd","SABnzbd docker image.","n",75378294,571,573,1968,12,12,?,"y","n","y","n","n",0,0,"GPL-3.0",4,1,146,"n","n","n","n",0,null,"n",0,"n",9,0,3
+"doccano","doccano","Open source annotation tool for machine learning practitioners.","n",101429865,570,544,48532,5060,5060,"Python","y","y","y","y","y",1071,147,"MIT",12,7,6574,"y","y","y","n",9,0.3517570268306667,"y",2,"y",12,0,63
+"xc-jp","purescript-protobuf","Google Protocol Buffers for PureScript","n",28085800,574,577,720,37,37,"PureScript","y","n","y","n","n",2,11,"BSD-3-Clause",5,1,12428,"n","n","n","n",5,0.8649771720492624,"n",0,"y",9,0,3
+"seL4","seL4","The seL4 microkernel","n",221594384,577,580,12895,3197,3197,"C","y","n","y","n","n",451,97,"NOASSERTION",4,9,4662,"y","y","n","n",10,0.7444632716864956,"n",0,"y",18,0,68
+"hotio","bazarr","Bazarr docker image.","n",75379542,577,580,1730,14,14,?,"y","n","y","n","n",1,0,"GPL-3.0",3,1,144,"n","n","n","n",0,null,"n",0,"n",9,0,3
+"hotio","lidarr","Lidarr docker image.","n",75379168,580,583,1854,13,13,?,"y","n","y","n","n",1,0,"GPL-3.0",3,1,144,"n","n","n","n",0,null,"n",0,"n",9,0,3
+"hotio","nzbget","NZBGet docker image.","n",75378724,583,586,1706,15,15,?,"y","n","y","n","n",2,0,"GPL-3.0",4,1,144,"n","n","n","n",0,null,"n",0,"n",9,0,3
+"hotio","ombi","Ombi docker image.","n",75378431,586,589,1861,15,15,?,"y","n","y","n","n",0,0,"GPL-3.0",4,1,140,"n","n","n","n",0,null,"n",0,"n",9,0,3
+"X3ZvaWQ","gubot","A qq group robot is used to provide some jx3-related functional support","n",29190781,586,589,622,29,29,"JavaScript","y","y","y","y","n",2,0,"MIT",0,0,2780,"n","n","n","n",3,0.760504823412045,"n",0,"n",9,0,2
+"adriaanvanrossum","saasforcovid.com","Fight COVID-19 together with these discounted SaaS products","n",41678238,588,464,753771,13,13,"JavaScript","y","n","y","n","y",5,2,"MIT",6,2,648,"n","n","n","n",3,0.7642582986262751,"y",1,"n",9,0,2
+"hotio","readarr","Docker image for Readarr.","n",41444416,590,592,1687,30,30,?,"y","n","y","n","n",2,0,"GPL-3.0",4,1,146,"n","n","n","n",0,null,"n",0,"n",10,0,3
+"codestella","putting-nerf-on-a-diet","Putting NeRF on a Diet: Semantically Consistent Few-Shot View Synthesis Implementation","n",2212177,69,593,23239,63,63,"Jupyter Notebook","y","y","y","y","n",5,0,"Apache-2.0",0,0,12792,"n","n","n","n",3,0.5983528327656283,"n",0,"n",9,0,7
+"paritytech","grandpa-bridge-gadget","A Bridge Gadget to Grandpa Finality.","n",27547652,592,479,1738,51,51,"Rust","y","y","y","n","n",20,30,"GPL-3.0",0,3,6094,"n","n","n","n",2,0.9980916899702139,"n",0,"n",18,0,7
+"hotio","jackett","Jackett docker image.","n",75379333,592,595,2066,14,14,?,"y","n","y","n","n",0,0,"GPL-3.0",3,1,146,"n","n","n","n",0,null,"n",0,"n",9,0,3
+"Junedayday","code_reading","code reading for go source code","n",40665537,593,596,3759,236,236,"Go","y","y","y","y","y",51,0,?,0,0,871,"n","n","n","n",4,0.4011358396834919,"y",1,"n",9,0,1
+"hotio","nzbhydra2","NZBHydra2 docker image.","n",75378564,596,598,1758,14,14,?,"y","n","y","n","n",1,0,"GPL-3.0",4,1,150,"n","n","n","n",0,null,"n",0,"n",9,0,4
+"hotio","sonarr","Sonarr docker image.","n",75378165,598,601,1843,26,26,?,"y","n","y","n","n",2,0,"GPL-3.0",5,1,144,"n","n","n","n",0,null,"n",0,"n",9,0,4
+"be5invis","Iosevka","Versatile typeface for code, from code.","n",190015011,602,603,21871202,12378,12378,"JavaScript","y","y","y","y","y",407,24,"OFL-1.1",8,1,290797,"n","n","n","n",3,0.9291922060647457,"y",1,"y",44,1,45
+"hotio","radarr","Radarr docker image.","n",75381342,602,604,2438,22,22,?,"y","n","y","n","n",5,0,"GPL-3.0",4,1,144,"n","n","n","n",0,null,"n",0,"n",9,0,3
+"freedoom","freedoom","Freedoom is an entirely free software game based on the Doom engine.","n",288266771,606,609,93998,611,611,"Python","y","y","y","n","n",121,96,"NOASSERTION",0,1,11011,"n","n","n","n",3,0.8531621665059467,"n",0,"y",13,0,56
+"IBM-Cloud","terraform-provider-ibm","Terraform on IBM provider https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-getting-started","n",129383340,605,609,27113,232,232,"Go","y","y","y","y","n",355,314,"MPL-2.0",5,2,5816,"n","y","n","y",8,0.9890457304206173,"n",0,"y",28,2,94
+"ROCmSoftwarePlatform","rocBLAS","Next generation BLAS implementation for ROCm platform","n",182945988,604,615,49578,156,156,"C++","y","y","y","y","n",102,3,"NOASSERTION",3,0,1311,"n","y","y","y",10,0.5131817957579841,"n",0,"y",7,0,58
+"mahmoodlab","PathomicFusion","Fusing Histology and Genomics via Deep Learning - IEEE TMI","n",50969480,619,622,31404,85,85,"Jupyter Notebook","y","y","y","y","n",22,2,"GPL-3.0",10,0,7915,"n","n","n","n",2,0.9814572892247861,"n",0,"n",9,0,2
+"boogheta","coronavirus-countries","COVID-19 interactive dashboard for the whole world","n",43126338,620,623,543172,54,54,"JavaScript","y","y","y","y","y",15,13,"AGPL-3.0",10,1,335,"n","n","n","n",5,0.47154056918861625,"y",1,"n",10,0,5
+"datadesk","california-coronavirus-scrapers","The open-source web scrapers that feed the Los Angeles Times' California coronavirus tracker.","n",13599738,621,624,933068,17,17,"Jupyter Notebook","y","n","y","n","n",2,0,"MIT",8,28,11799,"n","n","n","n",3,0.6024546319042713,"n",0,"n",9,0,7
+"opencv","opencv","Open Source Computer Vision Library","n",284585253,259,628,496324,55681,55681,"C++","y","n","y","y","n",46891,1968,"NOASSERTION",5,1,847,"n","y","y","y",20,0.8520853498953246,"n",0,"y",88,3,306
+"vovkos","llvm-package-windows","Provides LLVM binary packages for an (almost) complete Windows build matrix. Built and packaged by GitHub Actions.","n",136433355,626,628,125,44,44,"Batchfile","y","y","y","y","n",10,3,?,3,1,4371,"n","n","n","n",2,0.8498929990828493,"n",0,"y",7,0,1
+"cadadr","configuration","My Emacs configuration, OS setups, dotfiles, scripts and more.","n",110466772,626,629,28873,20,20,"Emacs Lisp","y","n","y","y","n",3,5,?,14,0,4903,"n","n","n","n",21,0.9393434510581284,"n",0,"y",8,0,1
+"Samsung","ONE","On-device Neural Engine","n",40246440,628,266,81957,194,194,"Python","y","y","y","y","n",81,305,"NOASSERTION",5,0,2876,"n","n","n","n",10,0.6131720289440621,"n",0,"y",45,3,47
+"ffMathy","FluffySpoon.JavaScript.Testing.Faking","An NSubstitute port to TypeScript called substitute.js.","n",96996703,630,633,1351,168,168,"TypeScript","y","y","y","y","n",22,14,"MIT",0,3,10776,"n","n","n","n",1,1,"n",0,"y",12,0,18
+"coderplanets","coderplanets_web","the most sexiest community for developers,  build with React, Mobx/MST, GraphQL, Styled-Components,  Rxjs, Ramda ... and ❤️","n",123299392,633,588,110301,317,317,"TypeScript","y","n","y","n","n",33,79,"GPL-3.0",7,1,2663,"n","n","n","n",6,0.6550932022414089,"n",0,"y",17,0,5
+"JessicaLim8","JessicaLim8","Profile ReadME! Join my community word cloud!","n",32410906,634,637,55833,58,58,"Ruby","y","y","y","y","n",40,3,?,3,2,16889,"n","n","n","n",1,1,"n",0,"n",17,0,3
+"dotnet","aspnetcore","ASP.NET Core is a cross-platform .NET framework for building modern cloud-based web applications on Windows, Mac, or Linux.","n",232757888,635,640,269387,25104,25104,"C#","y","y","y","y","n",6610,2777,"MIT",3,4,3850,"y","y","n","y",22,0.8777101295522745,"n",0,"y",243,19,343
+"YuzheSHI","Awesome-Cognitive-Machine-Learning","An awesome & curated list for cognitive machine learning, an emerging inter-discipline field that combines machine learning and cognitive science.","n",27296092,637,640,2544,12,12,?,"y","y","y","y","n",2,0,"CC0-1.0",5,0,54025,"n","n","n","n",0,null,"n",0,"n",9,0,1
+"TheAlgorithms","Julia","Algorithms implemented in the Julia programming language. We're collaborating with the Humans of Julia community!","n",4305162,641,581,289,66,66,"Julia","y","y","y","y","y",19,10,"MIT",13,4,1379,"y","y","n","n",1,1,"y",1,"n",10,0,15
+"resurrecting-open-source-projects","scrot","SCReenshOT - command line screen capture utility","n",77287354,645,648,450,196,196,"C","y","y","y","y","n",31,10,"NOASSERTION",3,1,2715,"n","y","n","n",4,0.9173394730110003,"n",0,"y",18,0,15
+"uinb","fusotao","A permissionless blockchain is not a dex but enable digital assets circulate trustlessly.","n",12945941,656,658,270,13,13,"Rust","y","y","y","y","n",3,0,"Apache-2.0",0,2,1728,"n","y","n","n",1,1,"n",0,"n",9,0,3
+"covid19india","monitor-bot","Tracks the changes in websites and new tweets from official handles","n",32574453,668,671,328761,18,18,"Python","y","y","y","y","n",12,0,"GPL-3.0",0,3,89,"n","n","n","n",2,0.9140055770441666,"n",0,"n",9,0,2
+"DeepBCI","Deep-BCI","An open software package to develop BCI based brain and cognitive computing technology for recognizing user's intention using deep learning","n",117069803,683,686,774662,177,177,"C","y","y","y","y","n",118,3,?,10,0,2703,"n","n","n","n",10,0.5325604726757133,"n",0,"n",8,0,26
+"mdn","content","The content behind MDN Web Docs","n",27091521,681,686,161200,2965,2965,"HTML","y","y","y","n","n",1938,573,"NOASSERTION",7,10,34508,"y","n","n","y",2,0.9999450696844937,"n",0,"n",64,0,487
+"sagemath","sagemath.github.io","www.sagemath.org files - edit the website repository, not this one here!","n",196973805,688,691,100606,28,28,"HTML","n","y","y","n","y",12,0,?,0,0,0,"n","n","n","n",5,0.6622808848384006,"y",1,"n",7,0,3
+"gentoo-mirror","gentoo","Official Gentoo ebuild repository","n",192548108,697,31,5762109,114,114,?,"n","y","y","n","n",19,1,?,0,0,0,"n","n","n","n",0,null,"n",0,"n",7,0,375
+"StockDrops","StockDropsPublicDesktopApp","This repo is to post issues and find the latest releases for the app.","n",6928621,707,710,64,63,63,?,"y","y","y","y","n",2,7,?,0,0,7087,"n","n","n","n",0,null,"n",0,"y",9,0,2
+"BBuf","giantpandacv.com",?,"n",24016090,716,719,104144,73,73,"HTML","y","y","y","y","n",13,1,"NOASSERTION",0,0,880,"n","n","n","n",2,0.580177276390008,"n",0,"n",9,0,5
+"CrazyZhang666","GTA5OnlineTools","GTA5线上小助手 文件存储","n",75057894,730,733,180215,149,149,?,"y","y","y","y","n",14,73,?,0,0,1438,"n","n","n","n",0,null,"n",0,"y",8,0,1
+"missdeer","blocklist","A big domain block list - 150000~260000 lines","n",166074273,731,736,829443,46,46,"Go","y","y","y","y","n",13,1,"GPL-3.0",2,1,1212,"n","n","n","n",2,0.9698510391579699,"n",0,"n",8,0,2
+"balabanmetin","apples","distance based phylogenetic placement","n",101336465,741,744,2759,11,11,"Python","y","y","y","y","y",3,3,"GPL-3.0",0,0,4490,"n","n","n","n",1,1,"y",1,"y",8,0,2
+"tandg-digital","objection-filter","Filter objection.js models over HTTP using complex search queries","n",124784973,741,687,689,93,93,"JavaScript","y","y","y","y","n",25,5,"NOASSERTION",0,0,7752,"n","n","n","n",2,0.7122153539381855,"n",0,"n",8,0,5
+"Coolpy7","Coolpy7","Coolpy7 core","n",96814082,747,661,711124,109,109,"Go","y","y","y","y","n",23,1,?,0,0,4563,"n","n","n","n",3,0.8828524657253939,"n",0,"y",8,0,1
+"Homebrew","homebrew-core","🍻 Default formulae for the missing package manager for macOS","n",170460554,744,13,421769,9584,9584,"Ruby","y","n","y","n","n",9500,121,"BSD-2-Clause",6,14,667,"y","y","y","y",2,0.9999386565672165,"n",0,"n",108,0,391
+"Eschatologue","Unlimited-Armament-Works","A port and a sequel to Heavy-Armaments-Industries, written in Java","n",7916540,761,764,1073,13,13,"Java","y","y","y","n","n",0,0,"MIT",3,1,3741,"n","n","n","n",1,1,"n",0,"y",9,0,1
+"haoziqaq","varlet","基于Vue3的Material design风格移动端组件库 Material design mobile component library for Vue3","n",23211307,762,747,16217,553,553,"Vue","y","y","y","y","y",77,0,"MIT",9,3,2146,"n","n","n","n",4,0.420323592219935,"y",1,"y",10,0,14
+"qsniyg","maxurl","Finds larger/original versions of images and videos","n",108543720,763,766,383777,420,420,"JavaScript","y","y","y","y","y",30,218,"Apache-2.0",5,0,10888,"n","y","n","n",4,0.9974111784018981,"y",1,"n",28,1,12
+"bage2014","study","全栈工程师学习笔记；Spring登录、shiro登录、CAS单点登录和Spring boot oauth2单点登录；Spring data cache 缓存，支持Redis和EHcahce; web安全，常见web安全漏洞以及解决思路；常规组件，比如redis、mq等；quartz定时任务，支持持久化数据库，动态维护启动暂停关闭；docker基本用法，常用image镜像使用，Docker-MySQL、docker-Postgres、Docker-nginx、Docker-nexus、Docker-Redis、Docker-RabbitMQ、Docker-zookeeper、Docker-es、Docker-zipkin、Docker-ELK等；mybatis实践、spring实践、spring boot实践等常用集成；基于redis的分布式锁；基于shared-jdbc的分库分表，支持原生jdbc和Spring Boot Mybatis","n",99851517,769,772,54890,169,169,"Java","y","y","y","y","n",49,9,?,14,0,6449,"n","n","n","n",13,0.4523812936414708,"n",0,"n",9,0,1
+"alpinelinux","aports","[MIRROR] Alpine packages build scripts","n",227042782,773,778,333019,502,502,"Shell","n","y","y","n","n",676,0,?,4,0,881,"n","y","n","y",17,0.9765995043267981,"n",0,"n",54,2,356
+"ruby-vietnam","hardcore-rule",?,"n",157131754,778,781,9935,138,138,"HTML","y","y","y","y","n",105,5,?,0,0,3608,"n","n","n","y",16,0.9440067318428769,"n",0,"n",9,0,84
+"YuzikiRain","Learn","关于编程的学习积累，包括：可运行代码、面试问题、笔记","n",77321533,779,782,5128,15,15,"C#","y","y","y","y","n",1,0,?,1,0,512,"n","n","n","n",1,1,"n",0,"n",8,0,1
+"mjwoods","RNetCDF","Read and write netcdf format in R","n",125783245,784,787,1639,15,15,"C","y","n","y","n","n",7,6,"NOASSERTION",0,1,458,"n","n","n","n",4,0.6682798093478073,"n",0,"y",7,2,3
+"nukeykt","NBlood","Reverse-engineered ports of Build games using EDuke32 engine technology and development principles (NBlood/Rednukem/PCExhumed)","n",77296235,787,790,148017,299,299,"C++","y","y","y","y","n",39,75,?,11,1,3548,"n","n","n","n",10,0.6214953636724128,"n",0,"y",8,0,31
+"wobsoriano","poke95","🚀 A Windows 95 style Pokédex built with React.","n",43154953,790,780,3507,126,126,"JavaScript","y","y","y","y","n",19,2,"MIT",5,0,557,"n","n","n","n",3,0.8981552065863698,"y",2,"n",12,0,4
+"angelikatyborska","vnu-elixir","An Elixir client for the Nu HTML Checker (v.Nu).","n",40758527,801,771,1381,48,48,"Elixir","y","y","y","y","n",0,2,"MIT",10,0,6186,"n","n","n","n",1,1,"n",0,"n",12,0,3
+"dotnet","wpf","WPF is a .NET Core UI framework for building Windows desktop applications.","n",87361947,801,188,34019,5229,5229,"C#","y","y","y","y","n",741,898,"MIT",0,0,6072,"y","y","n","y",17,0.8059842902736423,"n",0,"y",97,11,94
+"sorend","fylearn","Fuzzy machine learning algorithms implementing the scikit-learn interface.","n",215830090,803,805,283,54,54,"Python","y","y","y","y","n",16,0,"MIT",0,2,6246,"n","n","n","n",1,1,"n",0,"n",9,0,2
+"second-state","buidl","A browser-based IDE for creating, deploying, and sharing blockchain apps (DApps, or decentralized apps). Publish your first blockchain DApps in 5 minutes! Here is how: https://docs.secondstate.io/buidl-developer-tool/getting-started","n",69965031,803,746,49304,376,376,"Vue","y","y","y","y","y",5,24,"GPL-3.0",8,0,1619,"n","n","n","n",5,0.5358598173327273,"y",1,"n",9,0,4
+"tallbl0nde","TriPlayer","A feature-rich background audio player for Nintendo Switch (requires Atmosphere)","n",44738375,812,814,6931,74,74,"C","y","n","y","y","n",7,5,"MIT",3,0,2012,"n","n","n","n",5,0.8833479669124924,"n",0,"y",4,0,6
+"jblance","mpp-solar","Python package to communicate to MPP Solar PIP-4048MS inverters (and similar)","n",122437939,817,820,8144,86,86,"Python","y","y","y","n","n",47,6,"MIT",2,0,1383,"n","n","n","n",2,0.9994715590758999,"n",0,"y",13,0,6
+"ably","ably-cocoa","iOS, tvOS and macOS Objective-C and Swift client library SDK for Ably realtime messaging service","n",209840833,820,823,10250,18,18,"Swift","y","n","y","n","n",24,84,"Apache-2.0",8,1,28028,"n","n","y","n",6,0.6676012485979049,"n",0,"y",20,2,21
+"covid19india","api","Our Database","n",42508920,491,831,95618120,655,655,"Python","y","y","y","y","y",612,10,"NOASSERTION",7,1,10321,"n","n","n","n",3,0.7105048704884197,"y",1,"n",12,0,72
+"satan1a","TheRoadOfSO","学习安全运营的记录 | The knowledge base of security operation","n",42517857,836,776,5350,13,13,"HTML","y","y","y","y","y",8,0,?,8,0,255,"n","n","n","n",1,1,"y",1,"n",9,0,1
+"lukepolson","youtube_channel","Notebooks for the python tutorials of my youtube channel. See specific youtube video for link to specifc notebook.","n",10029731,851,854,51356,78,78,"Jupyter Notebook","y","y","y","y","n",50,1,?,0,0,1087,"n","n","n","n",2,0.9998181921715237,"n",0,"n",9,0,1
+"camunda-community-hub","zeebe-script-worker","Zeebe worker for script evaluation","n",96501638,853,856,274,14,14,"Java","y","n","y","n","n",6,0,"Apache-2.0",5,5,3417,"y","n","n","n",1,1,"n",0,"y",9,0,9
+"ant-design","pro-components","🏆 Use Ant Design like a Pro!","n",70827759,859,862,37602,1505,1505,"TypeScript","y","y","y","y","y",466,124,?,8,14,6849,"n","y","n","n",3,0.9465955392766683,"y",1,"y",33,0,348
+"DovFork","star261","与上游同步","n",3713533,868,870,486,16,16,"JavaScript","y","n","y","n","n",9,0,?,0,0,0,"n","n","n","n",1,1,"n",0,"n",9,0,2
+"nextgis","nextgisweb","Web GIS framework by NextGIS","n",248877567,868,871,46973,115,115,"Python","y","n","y","n","n",62,64,"GPL-3.0",4,0,1179,"n","n","n","n",9,0.5183674741023444,"n",0,"n",18,4,17
+"rcr","rirc","A terminal IRC client in C","n",248333022,869,871,2907,120,120,"C","y","n","y","n","n",17,0,"MIT",4,0,3449,"n","n","n","n",3,0.9810100415254084,"n",0,"n",6,0,6
+"COVID19Tracking","covid-tracking-data",?,"n",43400557,889,896,1467874,286,286,"Python","y","y","y","y","n",165,3,"Apache-2.0",2,10,1009,"y","n","n","n",3,0.4510398804027613,"n",0,"y",10,0,19
+"canismarko","dungeon-sheets","A tool to create character sheets and GM session notes for Dungeons and Dragons fifth edition (D&D 5e).","n",107091699,893,896,16829,90,90,"Python","y","y","y","y","n",40,17,"GPL-3.0",2,0,4910,"n","y","n","n",5,0.97570801692405,"n",0,"n",9,0,18
+"grokify","gocharts","Go code to help create various charts, e.g. C3, D3, Rickshaw, go-chart, etc.","n",131366515,896,445,824,29,29,"Go","y","y","y","y","y",5,0,"MIT",4,1,2743,"n","n","n","n",2,0.8827788781093693,"y",1,"y",7,0,1
+"elastic","kibana","Your window into the Elastic Stack","n",268103211,881,898,3260915,16338,16338,"TypeScript","y","y","y","n","n",6677,8844,"NOASSERTION",7,5,3964,"y","y","y","y",16,0.8986065411981362,"n",0,"y",758,4,356
+"Tencent","ncnn","ncnn is a high-performance neural network inference framework optimized for the mobile platform","n",128455933,892,889,15777,12218,12218,"C","y","y","y","y","n",2988,469,"NOASSERTION",20,49,18060,"n","y","n","n",8,0.45429750029761656,"n",0,"y",10,0,156
+"openjdk","mobile","http://openjdk.java.net/projects/mobile/","n",60110167,443,903,482235,95,95,"Java","n","n","y","n","n",17,2,"NOASSERTION",4,1,376,"n","y","n","n",26,0.7684600898448551,"n",0,"n",18,0,125
+"dativebase","dative","Dative: software for linguistic fieldwork","n",221564827,903,908,39073,13,13,"CoffeeScript","y","y","y","y","n",5,176,"Apache-2.0",3,0,3412,"n","n","n","n",8,0.9383778850578464,"n",0,"n",11,0,2
+"kra","futel-installation","futel-installation","n",235262701,907,909,179041,19,19,"C","y","y","y","y","n",6,95,?,0,0,93,"n","n","n","n",25,0.85865457547743,"n",0,"n",8,0,4
+"openjdk","jdk-sandbox","JDK Committers Sandbox","n",39871871,905,909,405073,22,22,"Java","n","n","y","n","n",23,0,"NOASSERTION",0,1,376,"n","y","n","n",26,0.7684645173036911,"n",0,"n",8,0,125
+"openjdk","panama-vector","Panama vector","n",27464438,906,910,370780,31,31,"Java","n","n","y","n","n",21,3,"NOASSERTION",0,1,376,"n","y","n","n",26,0.7684645173036911,"n",0,"n",16,0,125
+"JonathanGin52","JonathanGin52","Welcome to my profile README. Participate in my community Connect4 game!","n",32921599,909,911,2005,84,84,"Ruby","y","n","y","n","n",15,4,?,0,1,7893,"n","n","n","n",1,1,"n",0,"n",10,0,2
+"openjdk","aarch64-port","Port: AArch64 Project","n",25290316,909,913,505216,44,44,"Java","n","n","y","n","n",9,1,"NOASSERTION",0,1,376,"n","y","n","n",26,0.7684645173036911,"n",0,"n",19,0,125
+"lxhao61","integrated-examples","以Xray或v2ray、trojan-go或trojan、caddy（naiveproxy或trojan-go）等打造科学上网的优化配置及最优组合示例，自我备份及分享给大家食用。","n",10750694,921,923,4907,127,127,"Shell","y","y","y","y","n",47,0,"GPL-3.0",20,0,11963,"n","n","n","n",1,1,"n",0,"y",9,0,1
+"openjdk","jdk","JDK main-line development","n",90088710,922,834,985398,10452,10452,"Java","n","n","y","n","n",2524,147,"NOASSERTION",3,1,376,"n","y","n","n",26,0.7684645173036911,"n",0,"n",34,0,125
+"benjaminsampica","benjaminsampica",?,"n",32672107,926,929,1262,16,16,"JavaScript","y","y","y","y","n",0,1,?,0,1,968,"n","n","n","n",1,1,"y",1,"n",10,0,3
+"lucidrains","alphafold2","To eventually become an unofficial Pytorch implementation / replication of Alphafold2, as details of the architecture get released","n",20473566,933,928,20401,698,698,"Python","y","y","y","y","n",100,11,"MIT",4,2,29203,"n","n","n","n",2,0.9988470381159648,"n",0,"y",9,0,4
+"apache","shardingsphere","Distributed Database Ecosphere","n",174154704,929,937,403116,14262,14262,"Java","y","y","y","n","n",4907,479,"Apache-2.0",10,2,11099,"y","y","n","y",5,0.9560423452390985,"y",1,"y",53,1,276
+"camunda-community-hub","zeebe-hazelcast-exporter","Export events from Zeebe to Hazelcast","n",82565084,938,940,408,20,20,"Java","y","n","y","n","n",12,3,"Apache-2.0",3,2,6838,"y","n","n","n",1,1,"n",0,"y",10,0,10
+"apache","james-project","Emails at the heart of your business logic!","n",190678064,943,946,96474,503,503,"Java","n","y","y","n","n",334,19,"Apache-2.0",5,0,9753,"y","n","n","n",14,0.8938699064450131,"n",0,"n",10,0,70
+"erthink","libmdbx","One of the fastest embeddable key-value ACID database without WAL. libmdbx surpasses the legendary LMDB in terms of reliability, features and performance.","n",182692542,948,903,14455,825,825,"C","y","y","y","y","y",68,24,"NOASSERTION",10,6,36495,"n","n","n","n",6,0.6595010564614742,"y",1,"y",14,0,26
+"camunda-community-hub","zeebe-http-worker","Zeebe worker for HTTP calls","n",98571230,953,948,3248,20,20,"Java","y","n","y","n","n",13,10,"Apache-2.0",4,2,6993,"y","n","n","n",1,1,"n",0,"y",12,0,9

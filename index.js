@@ -6,15 +6,16 @@ const moment = require('moment')
 const arff = require('arff')
 const { promises: fs } = require('fs')
 
-// We use a personal access token if it's provided in PAT environment variable
-// https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting
-// https://github.com/settings/tokens/new
-
 const OctokitWithPlugins = Octokit
   .plugin(throttling) // Gives us hooks for handling errors related to throttling
   .plugin(retry) // All requests sent are now retried up to 3 times for recoverable errors
 
 const octokit = new OctokitWithPlugins({
+  // We use a personal access token if it's provided in PAT environment variable
+  // https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting
+  // https://github.com/settings/tokens/new
+  ...process.env.PAT && { auth: process.env.PAT },
+
   // Log what requests we're making
   log: consoleLogLevel({ level: 'info' }),
 
@@ -36,12 +37,11 @@ const octokit = new OctokitWithPlugins({
   },
 })
 
-async function getListOfRepos (desiredCount, pageSize = 100, query = 'stars:>10') {
+async function getListOfRepos (desiredCount, pageSize = (desiredCount < 100) ? desiredCount : 100, query = 'stars:>10') {
   let count = 0
   return octokit.paginate(
     'GET /search/repositories',
     {
-      ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
       q: query,
       sort: 'updated',
       mediaType: { previews: ['mercy'] }, // Required to get topics in the response
@@ -80,20 +80,24 @@ async function getListOfRepos (desiredCount, pageSize = 100, query = 'stars:>10'
 
 async function getContributors (listOfRepos) {
   for (const repo of listOfRepos) {
-    repo.contributors = await octokit.paginate(
-      octokit.rest.repos.listContributors,
-      {
-        ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
-        owner: repo.owner,
-        repo: repo.repo,
-        per_page: 100
-        // anon: true // Include anonymous contributors, which we would've done if CocoaPods/Specs didn't cause our data collection to crawl to a halt
-      },
-      response => response.data.map(contributor => ({
-        name: contributor.login,
-        contributions: contributor.contributions
-      }))
-    )
+    try {
+      repo.contributors = await octokit.paginate(
+        octokit.rest.repos.listContributors,
+        {
+          owner: repo.owner,
+          repo: repo.repo,
+          per_page: 100
+          // anon: true // Include anonymous contributors, which we would've done if CocoaPods/Specs didn't cause our data collection to crawl to a halt
+        },
+        response => response.data.map(contributor => ({
+          name: contributor.login,
+          contributions: contributor.contributions
+        }))
+      )
+    } catch {
+      // "The history or contributor list is too large to list contributors for this repository via the API."
+      repo.contributors = null
+    }
   }
 }
 
@@ -101,7 +105,6 @@ async function getReadmeLengths (listOfRepos) {
   for (const repo of listOfRepos) {
     try {
       const { data } = await octokit.rest.repos.getReadme({
-        ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
         owner: repo.owner,
         repo: repo.repo
       })
@@ -115,7 +118,6 @@ async function getReadmeLengths (listOfRepos) {
 async function getCommunityProfileMetrics (listOfRepos) {
   for (const repo of listOfRepos) {
     const { data } = await octokit.rest.repos.getCommunityProfileMetrics({
-      ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
       owner: repo.owner,
       repo: repo.repo
     })
@@ -129,7 +131,6 @@ async function getCommunityProfileMetrics (listOfRepos) {
 async function getLanguages (listOfRepos) {
   for (const repo of listOfRepos) {
     const { data } = await octokit.rest.repos.listLanguages({
-      ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
       owner: repo.owner,
       repo: repo.repo
     })
@@ -140,12 +141,11 @@ async function getLanguages (listOfRepos) {
 async function getDeployments (listOfRepos) {
   for (const repo of listOfRepos) {
     const response = await octokit.rest.repos.listDeployments({
-      ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
       owner: repo.owner,
       repo: repo.repo,
       per_page: 1
     })
-    repo.uses_deployments = response.data.length > 0
+    repo.has_deployments = response.data.length > 0
   }
 }
 
@@ -155,7 +155,6 @@ async function getEnvironments (listOfRepos) {
       repo.environments = await octokit.paginate(
         octokit.rest.repos.getAllEnvironments,
         {
-          ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
           owner: repo.owner,
           repo: repo.repo
         },
@@ -170,12 +169,11 @@ async function getEnvironments (listOfRepos) {
 async function getReleases (listOfRepos) {
   for (const repo of listOfRepos) {
     const response = await octokit.rest.repos.listReleases({
-      ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
       owner: repo.owner,
       repo: repo.repo,
       per_page: 1
     })
-    repo.uses_releases = response.data.length > 0
+    repo.has_releases = response.data.length > 0
   }
 }
 
@@ -184,7 +182,6 @@ async function getWorkflows (listOfRepos) {
     repo.workflows = await octokit.paginate(
       octokit.rest.actions.listRepoWorkflows,
       {
-        ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
         owner: repo.owner,
         repo: repo.repo,
         per_page: 100
@@ -199,7 +196,6 @@ async function getIssueLabels (listOfRepos) {
     repo.labels = await octokit.paginate(
       octokit.rest.issues.listLabelsForRepo,
       {
-        ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
         owner: repo.owner,
         repo: repo.repo,
         per_page: 100
@@ -214,7 +210,6 @@ async function getMilestones (listOfRepos) {
     repo.milestones = await octokit.paginate(
       octokit.rest.issues.listMilestones,
       {
-        ...process.env.PAT && { headers: { Authorization: `token ${process.env.PAT}` } },
         owner: repo.owner,
         repo: repo.repo,
         per_page: 100
@@ -236,7 +231,7 @@ function getSecondsSince (timestampIsoString) {
   return now.diff(timestamp, 'seconds')
 }
 
-async function writeToArffFile(listOfRepos, filename) {
+async function writeToArffFile (listOfRepos, filename) {
   const listOfReposInArffFormat = arff.format({
     relation: 'GitHub Community Health',
     attributes: {
@@ -272,8 +267,122 @@ async function writeToArffFile(listOfRepos, filename) {
       size: {
         name: 'size',
         type: 'number'
+      },
+      stargazers_count: {
+        name: 'stargazers_count',
+        type: 'number'
+      },
+      watchers_count: {
+        name: 'watchers_count',
+        type: 'number'
+      },
+      primary_language: {
+        name: 'primary_language',
+        type: 'string'
+      },
+      has_issues: {
+        name: 'has_issues',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      has_projects: {
+        name: 'has_projects',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      has_downloads: {
+        name: 'has_downloads',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      has_wiki: {
+        name: 'has_wiki',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      has_pages: {
+        name: 'has_pages',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      forks_count: {
+        name: 'forks_count',
+        type: 'number'
+      },
+      open_issues_count: {
+        name: 'open_issues_count',
+        type: 'number'
+      },
+      license: {
+        name: 'license',
+        type: 'string'
+      },
+      topics_count: {
+        name: 'topics_count',
+        type: 'number'
+      },
+      workflows_count: {
+        name: 'workflows_count',
+        type: 'number'
+      },
+      readme_size: {
+        name: 'readme_size',
+        type: 'number'
+      },
+      has_code_of_conduct: {
+        name: 'has_code_of_conduct',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      has_contributing: {
+        name: 'has_contributing',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      has_issue_template: {
+        name: 'has_issue_template',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      has_pull_request_template: {
+        name: 'has_pull_request_template',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      languages_count: {
+        name: 'languages_count',
+        type: 'number'
+      },
+      primary_language_ratio: {
+        name: 'primary_language_ratio',
+        type: 'number'
+      },
+      has_deployments: {
+        name: 'has_deployments',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      environments_count: {
+        name: 'environments_count',
+        type: 'number'
+      },
+      has_releases: {
+        name: 'has_releases',
+        type: 'enum',
+        values: ['y', 'n']
+      },
+      labels_count: {
+        name: 'labels_count',
+        type: 'number'
+      },
+      milestones_count: {
+        name: 'milestones_count',
+        type: 'number'
+      },
+      contributors_count: { // Putting this last for convenience, since we'll be using it as the label
+        name: 'contributors_count',
+        type: 'number'
       }
-      // TODO
     },
     data: listOfRepos.map(repo => ({
       owner: repo.owner,
@@ -283,8 +392,33 @@ async function writeToArffFile(listOfRepos, filename) {
       seconds_since_created: getSecondsSince(repo.created_at),
       seconds_since_updated: getSecondsSince(repo.updated_at),
       seconds_since_pushed: getSecondsSince(repo.pushed_at),
-      size: repo.size
-      // TODO
+      size: repo.size,
+      stargazers_count: repo.stargazers_count,
+      watchers_count: repo.watchers_count,
+      primary_language: repo.language,
+      has_issues: coerceBooleanToYN(repo.has_issues),
+      has_projects: coerceBooleanToYN(repo.has_projects),
+      has_downloads: coerceBooleanToYN(repo.has_downloads),
+      has_wiki: coerceBooleanToYN(repo.has_wiki),
+      has_pages: coerceBooleanToYN(repo.has_pages),
+      forks_count: repo.forks_count,
+      open_issues_count: repo.open_issues_count,
+      license: repo.license,
+      topics_count: repo.topics?.length,
+      workflows_count: repo.workflows?.length,
+      readme_size: repo.readme_size,
+      has_code_of_conduct: coerceBooleanToYN(repo.has_code_of_conduct),
+      has_contributing: coerceBooleanToYN(repo.has_contributing),
+      has_issue_template: coerceBooleanToYN(repo.has_issue_template),
+      has_pull_request_template: coerceBooleanToYN(repo.has_pull_request_template),
+      languages_count: Object.keys(repo.languages).length,
+      primary_language_ratio: repo.languages[repo.language] / Object.values(repo.languages).reduce((a, b) => a + b, 0),
+      has_deployments: coerceBooleanToYN(repo.has_deployments),
+      environments_count: repo.environments?.length,
+      has_releases: coerceBooleanToYN(repo.has_releases),
+      labels_count: repo.labels?.length,
+      milestones_count: repo.milestones?.length,
+      contributors_count: repo.contributors?.length
     }))
   })
   await fs.writeFile(filename, listOfReposInArffFormat)
@@ -293,10 +427,11 @@ async function writeToArffFile(listOfRepos, filename) {
 (async function main () {
   try {
     const start = Date.now()
-    const listOfRepos = await getListOfRepos(30, 30)
+    let listOfRepos = await getListOfRepos(300)
+    await getContributors(listOfRepos)
+    listOfRepos = listOfRepos.filter(repo => repo.contributors !== null) // Some repos has so many contributors, the API won't give us details on them
     // We're doing these in sequence to try to play nicely with rate limits
     await getWorkflows(listOfRepos)
-    await getContributors(listOfRepos)
     await getReadmeLengths(listOfRepos)
     await getCommunityProfileMetrics(listOfRepos)
     await getLanguages(listOfRepos)
