@@ -57,14 +57,14 @@ async function getListOfRepos (desiredCount, pageSize = (desiredCount < 100) ? d
         owner: repo.owner?.login,
         repo: repo.name,
         description: repo.description,
-        fork: repo.fork,
+        default_branch: repo.default_branch,
         created_at: repo.created_at,
         updated_at: repo.updated_at,
         pushed_at: repo.pushed_at,
         size: repo.size,
         stargazers_count: repo.stargazers_count,
         watchers_count: repo.watchers_count,
-        language: repo.language,
+        primary_language: repo.language,
         has_issues: repo.has_issues,
         has_projects: repo.has_projects,
         has_downloads: repo.has_downloads,
@@ -72,9 +72,12 @@ async function getListOfRepos (desiredCount, pageSize = (desiredCount < 100) ? d
         has_pages: repo.has_pages,
         forks_count: repo.forks_count,
         open_issues_count: repo.open_issues_count,
-        license: repo.license?.spdx_id,
-        topics: repo.topics,
-        default_branch: repo.default_branch
+        license: (repo.license)
+          ? (repo.license.spdx_id === 'NOASSERTION')
+            ? 'Non-standard'
+            : repo.license.spdx_id
+          : 'None',
+        topics: repo.topics
       }))
     }
   )
@@ -229,11 +232,6 @@ async function writeToArffFile (listOfRepos, filename) {
   const listOfReposInArffFormat = arff.format({
     relation: 'GitHub Community Health',
     attributes: {
-      fork: {
-        name: 'fork',
-        type: 'enum',
-        values: ['y', 'n']
-      },
       seconds_since_created: {
         name: 'seconds_since_created',
         type: 'number'
@@ -367,14 +365,13 @@ async function writeToArffFile (listOfRepos, filename) {
       }
     },
     data: listOfRepos.map(repo => ({
-      fork: coerceBooleanToYN(repo.fork),
       seconds_since_created: getSecondsSince(repo.created_at),
       seconds_since_updated: getSecondsSince(repo.updated_at),
       seconds_since_pushed: getSecondsSince(repo.pushed_at),
       size: repo.size,
       stargazers_count: repo.stargazers_count,
       watchers_count: repo.watchers_count,
-      primary_language: repo.language,
+      primary_language: repo.primary_language,
       has_issues: coerceBooleanToYN(repo.has_issues),
       has_projects: coerceBooleanToYN(repo.has_projects),
       has_downloads: coerceBooleanToYN(repo.has_downloads),
@@ -391,7 +388,10 @@ async function writeToArffFile (listOfRepos, filename) {
       has_issue_template: coerceBooleanToYN(repo.has_issue_template),
       has_pull_request_template: coerceBooleanToYN(repo.has_pull_request_template),
       languages_count: Object.keys(repo.languages).length,
-      primary_language_ratio: repo.languages[repo.language] / Object.values(repo.languages).reduce((a, b) => a + b, 0),
+      // Sometimes, the primary language isn't in the list of languages used (???)
+      ...repo.languages[repo.primary_language] && {
+        primary_language_ratio: repo.languages[repo.primary_language] / Object.values(repo.languages).reduce((a, b) => a + b, 0),
+      },
       has_deployments: coerceBooleanToYN(repo.has_deployments),
       environments_count: repo.environments?.length,
       has_releases: coerceBooleanToYN(repo.has_releases),
@@ -406,8 +406,9 @@ async function writeToArffFile (listOfRepos, filename) {
 (async function main () {
   try {
     const start = Date.now()
-    let listOfRepos = await getListOfRepos(10)
+    let listOfRepos = await getListOfRepos(2500)
     await getContributorCounts(listOfRepos)
+    listOfRepos = listOfRepos.filter(repo => repo.contributor_count)
     // We're doing these in sequence to try to play nicely with rate limits
     await getWorkflows(listOfRepos)
     await getReadmeLengths(listOfRepos)
