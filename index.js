@@ -137,12 +137,19 @@ async function getLanguages (listOfRepos) {
 
 async function getDeployments (listOfRepos) {
   for (const repo of listOfRepos) {
-    const response = await octokit.rest.repos.listDeployments({
-      owner: repo.owner,
-      repo: repo.repo,
-      per_page: 1
-    })
-    repo.has_deployments = response.data.length > 0
+    try {
+      const response = await octokit.rest.repos.listDeployments({
+        owner: repo.owner,
+        repo: repo.repo,
+        per_page: 1
+      })
+      repo.has_deployments = response.data.length > 0
+    } catch (e) {
+      // This errored out with a 502 on https://github.com/RocketChat/Rocket.Chat/deployments, which presumably has _thousands_ of deployments
+      if (e?.status === 502) repo.has_deployments = true
+
+      // Otherwise, undefined is okay.
+    }
   }
 }
 
@@ -406,7 +413,7 @@ async function writeToArffFile (listOfRepos, filename) {
 (async function main () {
   try {
     const start = Date.now()
-    let listOfRepos = await getListOfRepos(2500)
+    let listOfRepos = await getListOfRepos(1000)
     await getContributorCounts(listOfRepos)
     listOfRepos = listOfRepos.filter(repo => repo.contributor_count)
     // We're doing these in sequence to try to play nicely with rate limits
