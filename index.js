@@ -236,36 +236,39 @@ function getSecondsSince (timestampIsoString) {
 }
 
 async function writeToArffFile (listOfRepos, filename) {
+  const uniqueLanguages = new Set(listOfRepos.map(repo => repo.primary_language))
+  const uniqueLicenses = new Set(listOfRepos.map(repo => repo.license))
   const listOfReposInArffFormat = arff.format({
     relation: 'GitHub Community Health',
     attributes: {
       seconds_since_created: {
         name: 'seconds_since_created',
-        type: 'number'
+        type: 'numeric'
       },
       seconds_since_updated: {
         name: 'seconds_since_updated',
-        type: 'number'
+        type: 'numeric'
       },
       seconds_since_pushed: {
         name: 'seconds_since_pushed',
-        type: 'number'
+        type: 'numeric'
       },
       size: {
         name: 'size',
-        type: 'number'
+        type: 'numeric'
       },
       stargazers_count: {
         name: 'stargazers_count',
-        type: 'number'
+        type: 'numeric'
       },
       watchers_count: {
         name: 'watchers_count',
-        type: 'number'
+        type: 'numeric'
       },
       primary_language: {
         name: 'primary_language',
-        type: 'string'
+        type: 'enum',
+        values: [...uniqueLanguages]
       },
       has_issues: {
         name: 'has_issues',
@@ -294,27 +297,28 @@ async function writeToArffFile (listOfRepos, filename) {
       },
       forks_count: {
         name: 'forks_count',
-        type: 'number'
+        type: 'numeric'
       },
       open_issues_count: {
         name: 'open_issues_count',
-        type: 'number'
+        type: 'numeric'
       },
       license: {
         name: 'license',
-        type: 'string'
+        type: 'enum',
+        values: [...uniqueLicenses]
       },
       topics_count: {
         name: 'topics_count',
-        type: 'number'
+        type: 'numeric'
       },
       workflows_count: {
         name: 'workflows_count',
-        type: 'number'
+        type: 'numeric'
       },
       readme_size: {
         name: 'readme_size',
-        type: 'number'
+        type: 'numeric'
       },
       has_code_of_conduct: {
         name: 'has_code_of_conduct',
@@ -338,11 +342,11 @@ async function writeToArffFile (listOfRepos, filename) {
       },
       languages_count: {
         name: 'languages_count',
-        type: 'number'
+        type: 'numeric'
       },
       primary_language_ratio: {
         name: 'primary_language_ratio',
-        type: 'number'
+        type: 'numeric'
       },
       has_deployments: {
         name: 'has_deployments',
@@ -351,7 +355,7 @@ async function writeToArffFile (listOfRepos, filename) {
       },
       environments_count: {
         name: 'environments_count',
-        type: 'number'
+        type: 'numeric'
       },
       has_releases: {
         name: 'has_releases',
@@ -360,15 +364,15 @@ async function writeToArffFile (listOfRepos, filename) {
       },
       labels_count: {
         name: 'labels_count',
-        type: 'number'
+        type: 'numeric'
       },
       milestones_count: {
         name: 'milestones_count',
-        type: 'number'
+        type: 'numeric'
       },
       contributor_count: { // Putting this last for convenience, since we'll be using it as the label
         name: 'contributor_count',
-        type: 'number'
+        type: 'numeric'
       }
     },
     data: listOfRepos.map(repo => ({
@@ -413,7 +417,7 @@ async function writeToArffFile (listOfRepos, filename) {
 (async function main () {
   try {
     const start = Date.now()
-    let listOfRepos = await getListOfRepos(1000)
+    let listOfRepos = await getListOfRepos(50)
     await getContributorCounts(listOfRepos)
     listOfRepos = listOfRepos.filter(repo => repo.contributor_count)
     // We're doing these in sequence to try to play nicely with rate limits
