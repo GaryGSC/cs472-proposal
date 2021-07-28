@@ -417,7 +417,7 @@ async function writeToArffFile (listOfRepos, filename) {
 (async function main () {
   try {
     const start = Date.now()
-    let listOfRepos = await getListOfRepos(50)
+    let listOfRepos = await getListOfRepos(process.env.COUNT ? parseInt(process.env.COUNT, 10) : 50) // <-- Number of lines for ARFF file
     await getContributorCounts(listOfRepos)
     listOfRepos = listOfRepos.filter(repo => repo.contributor_count)
     // We're doing these in sequence to try to play nicely with rate limits
