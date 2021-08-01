@@ -617,6 +617,11 @@ async function writeToArffFile (listOfRepos, filename) {
         name: 'milestones_count',
         type: 'numeric'
       },
+      default_branch: {
+        name: 'default_branch',
+        type: 'enum',
+        values: ['master', 'main', 'other']
+      },
       contributor_count: { // Putting this last for convenience, since we'll be using it as the label
         name: 'contributor_count',
         type: 'numeric'
@@ -663,6 +668,7 @@ async function writeToArffFile (listOfRepos, filename) {
       has_releases: coerceBooleanToYN(repo.has_releases),
       labels_count: repo.labels_count,
       milestones_count: repo.milestones_count,
+      default_branch: (repo.default_branch === 'master' || repo.default_branch === 'main') ? repo.default_branch : 'other',
       contributor_count: repo.contributor_count
     }))
   })
